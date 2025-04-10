@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOR LOVEY</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Cursive", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #945cb4;
+        color: #3f3f3f;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: purple;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Hero Section with Background Image */
+      section.hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/487416541_8851714388261296_8904122459602987831_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH-Ff7qjCbDPWxZgvXu5l2FYuAkGoaO8Uxi4CQaho7xTLW_LemMv3-vHYePsfpDXSBHDBsYN-buhv9Ut0dPeSnd&_nc_ohc=6nyLfD7QF98Q7kNvwFpi4oi&_nc_oc=Adna1TKA-Mt8R3drP-3W8cGHm1BV8AKP2g568qCRIIqwLta29FqTazKr08h8yww_0MmR3WzV22ANmo3TtH0O-ZKR&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AFP7HJnf1SLQlIe0oDcahktzS_3p-0ACAB7UIUJ09TMtA&oe=681DD1B2") center/cover no-repeat;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+
+      section.hero .content {
+        z-index: 2;
+      }
+
+      section.hero h1 {
+        font-size: 4em;
+        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+        margin-bottom: 10px;
+      }
+
+      section.hero p {
+        font-size: 1.5em;
+        margin-bottom: 40px;
+      }
+
+      section.hero .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      section.hero button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        color: white;
+        background-color: #a476ff;
+        border-radius: 50px;
+      }
+
+      section.hero button:hover {
+        background-color: #be29ec;
+      }
+
+      /* Love Letter Sections */
+      section.love-letter {
+        display: none;
+        padding: 40px;
+        background-color: white;
+        border-radius: 15px;
+        width: 60%;
+        margin: 50px auto;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 1s ease-out forwards;
+        z-index: 1;
+      }
+
+      section.love-letter h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      section.love-letter p {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Popup Modal */
+      section.popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        z-index: 10;
+      }
+
+      section.popup button {
+        padding: 10px 20px;
+        background-color: #ff66b2;
+        color: white;
+        border-radius: 50px;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 720px) {
+        section.hero h1 {
+          font-size: 2.5em;
+        }
+
+        section.hero p {
+          font-size: 1.2em;
+        }
+
+        section.hero button {
+          font-size: 1em;
+          padding: 12px 24px;
+        }
+
+        section.love-letter {
+          width: 80%;
+          padding: 30px;
+        }
+
+        section.popup {
+          width: 80%;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="content">
+        <h1>Where Memories Bloom</h1>
+        <p>ALL MY MESSAGE FOR YOU</p>
+        <div class="buttons">
+          <button onclick="toggleLoveLetter()">My Valentines Letter</button>
+          <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
+          <button onclick="openPopup()">Letter</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Love Letter Sections -->
+    <section class="love-letter" id="loveLetter">
+      <h2>Hi lovey</h2>
+      <p>gusto ko lang sana sabihin na happy happy valentines sayo. di ko alam kung gaano ako kaswerte na nakilala kita at sa paano mo ko minahal at tinrato ng tama.every moment na kasama kita, sa bawat oras na nakakausap kita, pakiramdam ko buong buo na ang araw ko, ang mga bawat yakap at i love you mo na nagiging pahinga ko, at sa paano mo napapawi yung pagod ko. thank you lovey kase ikaw yung unang taong minahal ako ng ganito, thank you kase lagi ka nandyan sa tabi ko kahit na minsan nagkakaroon tayo ng misunderstanding. gusto ko lang sana ipaalala sayo na handa ako maghintay sayo kahit abutin pa ng taon, hindi mo ko kailangan alalahanin na baka iwan kita balang araw at sumuko sa kakahintay sayo, hindi hindi ko gagawin yan lovey, di ako mapapagod na alalahanin at intindihin ka. di rin ako nagmamadali na mangyare agad iyon kahit na alam na ng magulang ko kung ano na meron tayo ngayon, gusto ko ituloy mo at unahin mo yung pag-aaral mo, lalo na sila tita. gusto ko lang din sana sabihin lagi ako nasa tabi mo galit ka man o hindi lagi ako nandito.thankyou lovey sa love na binibigay mo at sa paano mo ko tinrato ng tama, ikaw lang yung girl na gusto ko at ipaglalaban ko hanggang sa huli, once again thankyou lovey and I love you so muchhhhhhhh</p>
+      <p>your future at makulit na boyfriend,</p>
+      <p>Raymarc</p>
+    </section>
+
+    <section class="love-letter" id="loveLetter2">
+      <h2>Congratulations, lovey. You made it</h2>
+      <p>gusto ko lang sabihin proud na proud ako sayo, finally you now going to senior high school. after all sleepless nights, challenges, doubts, and those sacrifices so far, you finally made it to your next journey. kita ko yung effort at sipag na lagi mo binibigay sa pagaaral mo, I'am very of proud you, lovey.
+</p>
+      <p>gusto ko lang din sana sabihin na thank you. sinimulan ko ang school year na to with you until now kasama pa rin kita kahit na andaming naganap sa school year natin thankful pa rin ako kase ikaw ang kasama ko hanggang sa matapos ang school year nato. ihyk lagi ko pinagdadasal na sana sa next journey natin, kasama kita hanggang sa matupad yung pangarap mo. I always here to support you, kahit minsan di tayo magkaintindihan lagi pa rin ako nandito. di kita iiwan, di ako aalis sa tabi mo kahit magalit ka sakin ng sobra sobra, magsstay pa rin ako, susuportahan pa rin kita.
+</p>
+      <p>once again, congratulations lovey you finally did it. I love you, forever and always
+</p>
+      <p>Raymarc</p>
+    </section>
+
+    <!-- Popup Modal -->
+    <section class="popup" id="popup">
+      <h2>Surprise!</h2>
+      <p>May kasunod pa, abangan......</p>
+      <button onclick="closePopup()">Close</button>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" style="text-align:center; padding:50px; background-color:#fff;">
+      <h2 style="color:#945cb4;">Our Moments 💓💕</h2>
+      <div style="position:relative; max-width:90%; margin:20px auto;">
+        <img id="gallery-img" src="https://www.lismore.nsw.gov.au/files/assets/public/v/1/1.-households/4.-pets-and-animals/kitten.jpg?dimension=pageimage&w=480" style="width:100%; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1);" />
+        <button onclick="prevImage()" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#be29ec; color:white; border-radius:50%; padding:10px;">❮</button>
+        <button onclick="nextImage()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#be29ec; color:white; border-radius:50%; padding:10px;">❯</button>
+      </div>
+    </section>
+
+    <!-- Secret Message -->
+    <section style="text-align:center; padding:40px;">
+      <button onclick="document.getElementById('secret-modal').style.display='block'" style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock Secret Message 🔐</button>
+      <div id="secret-modal" style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
+        <input id="code-input" type="password" placeholder="Enter code" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
+        <br /><br />
+        <button onclick="checkCode()" style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
+        <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 You found my hidden message! I love you forever and ever.</p>
+      </div>
+    </section>
+
+    <!-- Memory Game / Quiz -->
+    <section style="text-align:center; padding:50px; background:#fff;">
+      <h2 style="color:#945cb4;">Do you remember it? 🧠💘</h2>
+      <p id="quiz-question">What’s our favorite food to eat together?</p>
+      <div id="quiz-options" style="margin-top:20px;">
+        <button>Option 1</button>
+<button>Option 2</button>
+<button>Option 3</button>
+
+      </div>
+      <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+      // Love Letter Toggle
+      function toggleLoveLetter() {
+        const loveLetter = document.getElementById("loveLetter");
+        loveLetter.style.display = loveLetter.style.display === "block" ? "none" : "block";
+      }
+      function toggleLoveLetter2() {
+        const loveLetter2 = document.getElementById("loveLetter2");
+        loveLetter2.style.display = loveLetter2.style.display === "block" ? "none" : "block";
+      }
+
+      // Popup
+      function openPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      // Gallery Slideshow
+      const images = [
+  "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg",
+  "https://headsupfortails.com/cdn/shop/articles/How_to_Calculate_Your_Cat_s_Age_in_Human_Years_large.jpg?v=1738042061",
+  "https://www.lismore.nsw.gov.au/files/assets/public/v/1/1.-households/4.-pets-and-animals/kitten.jpg?dimension=pageimage&w=480"
+];
+
+
+
+      let currentImg = 0;
+      function showImage(index) {
+        document.getElementById("gallery-img").src = images[index];
+      }
+      function nextImage() {
+        currentImg = (currentImg + 1) % images.length;
+        showImage(currentImg);
+      }
+      function prevImage() {
+        currentImg = (currentImg - 1 + images.length) % images.length;
+        showImage(currentImg);
+      }
+
+      // Secret Code Message
+      function checkCode() {
+        const input = document.getElementById("code-input").value;
+        if (input === "072324") {
+          document.getElementById("secret-text").style.display = "block";
+        } else {
+          alert("Oops! Mali, Tanungin mo yung gumawa");
+        }
+      }
+
+      // Quiz Game (Multi-question)
+const quizData = [
+    {
+      question: "What’s our favorite food to eat together?",
+      options: ["Fried Chicken 🍗", "Spaghetti 🍝", "Sinigang 🍲"],
+      correctIndex: 0
+    },
+    {
+      question: "Kailan ang una nating paguusap?",
+      options: ["AUG 5", "JUNE 11", "JULY 23"],
+      correctIndex: 2
+    },
+    {
+      question: "Anong tawagan natin madalas?",
+      options: ["Lovey & Mahal", "Bebe & Sweetie", "Honey & Babe"],
+      correctIndex: 0
+    }
+  ];
+
+  let currentQuestion = 0;
+
+  function loadQuestion() {
+    const q = quizData[currentQuestion];
+    document.getElementById("quiz-question").textContent = q.question;
+
+    const buttons = document.querySelectorAll("#quiz-options button");
+    buttons.forEach((btn, i) => {
+      btn.textContent = q.options[i];
+      btn.onclick = () => checkAnswer(i);
+    });
+
+    document.getElementById("quiz-feedback").textContent = "";
+  }
+
+  function checkAnswer(index) {
+    const q = quizData[currentQuestion];
+    const feedback = document.getElementById("quiz-feedback");
+
+    if (index === q.correctIndex) {
+      feedback.textContent = "YAN! ngayon alam mo na 💖";
+      feedback.style.color = "#4CAF50";
+    } else {
+      feedback.textContent = "Ayy, di alam";
+      feedback.style.color = "#F44336";
+    }
+
+    setTimeout(() => {
+      currentQuestion = (currentQuestion + 1) % quizData.length;
+      loadQuestion();
+    }, 2000);
+  }
+
+  window.onload = loadQuestion;
+    </script>
+  </body>
+</html>
