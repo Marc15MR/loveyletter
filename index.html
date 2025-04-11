@@ -213,20 +213,30 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" style="text-align:center; padding:50px; background-color:#fff;">
-      <h2 style="color:#945cb4;">Our Moments 💓💕</h2>
-      <div style="position:relative; max-width:90%; margin:20px auto;">
-        <img id="gallery-img" src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/487416541_8851714388261296_8904122459602987831_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH-Ff7qjCbDPWxZgvXu5l2FYuAkGoaO8Uxi4CQaho7xTLW_LemMv3-vHYePsfpDXSBHDBsYN-buhv9Ut0dPeSnd&_nc_ohc=hEFD4IL1yfUQ7kNvwGe-oD7&_nc_oc=AdlvJ_A9f3iEDFOIsIuR7iv85-WYMwFM1OqLhOrExJWv8YzR2oZou8Do930cZpp2mm7_XTySaSNKmJzfNLV4t0kv&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AGiD6poJGOlcE5xzHI3axiAHht5aBEwt2hrkwUnOfsbEw&oe=681FCBF2" />
-        <button onclick="prevImage()" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#be29ec; color:white; border-radius:50%; padding:10px;">❮</button>
-        <button onclick="nextImage()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#be29ec; color:white; border-radius:50%; padding:10px;">❯</button>
-      </div>
-    </section>
+<section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
+  <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
+  <div style="position: relative; max-width: 600px; margin: 0 auto;">
+    <img id="gallery-img"
+      src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/482886877_1237407061151420_4020204477210282448_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH8JEkhhW-H8fsGekgBvEs2YWa-MMINn0hhZr4wwg2fSAx4tWZBsMFyKoSpkESwxJwTPc10WmKltB04eUh7gdqB&_nc_ohc=hqR026ndE5QQ7kNvwHmTFF_&_nc_oc=AdmDW_hBoOcHrV1gZK1EJn4s1U9tzSaVvbp7HmO-jGKvZTzRAdUkwYnN1SS0UtuKWkkm9D4Ve1Ff6vL3pPcw8rb3&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AFTJz_TddO39iiiLEuna5upg89aL1WwAEZmUdYW4T7Ezg&oe=681FD94D"
+      style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
+
+    <!-- Navigation buttons -->
+    <button onclick="prevImage()"
+      style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      ❮
+    </button>
+    <button onclick="nextImage()"
+      style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      ❯
+    </button>
+  </div>
+</section>
 
     <!-- Secret Message -->
     <section style="text-align:center; padding:40px;">
       <button onclick="document.getElementById('secret-modal').style.display='block'" style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock My Message 🔐</button>
       <div id="secret-modal" style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
-        <input id="code-input" type="password" placeholder="Enter code(the day when god sent you into my life)" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
+        <input id="code-input" type="password" placeholder="Enter code" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
         <br /><br />
         <button onclick="checkCode()" style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
         <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen mo remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi lang isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey mo, sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo pa rin yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is on the day God sent you into my life. I love you so much forever and always</p>
