@@ -216,7 +216,7 @@
     <section id="gallery" style="text-align:center; padding:50px; background-color:#fff;">
       <h2 style="color:#945cb4;">Our Moments 💓💕</h2>
       <div style="position:relative; max-width:90%; margin:20px auto;">
-        <img id="gallery-img" src="https://www.lismore.nsw.gov.au/files/assets/public/v/1/1.-households/4.-pets-and-animals/kitten.jpg?dimension=pageimage&w=480" style="width:100%; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1);" />
+        <img id="gallery-img" src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/482886877_1237407061151420_4020204477210282448_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH8JEkhhW-H8fsGekgBvEs2YWa-MMINn0hhZr4wwg2fSAx4tWZBsMFyKoSpkESwxJwTPc10WmKltB04eUh7gdqB&_nc_ohc=hqR026ndE5QQ7kNvwHmTFF_&_nc_oc=AdmDW_hBoOcHrV1gZK1EJn4s1U9tzSaVvbp7HmO-jGKvZTzRAdUkwYnN1SS0UtuKWkkm9D4Ve1Ff6vL3pPcw8rb3&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AFTJz_TddO39iiiLEuna5upg89aL1WwAEZmUdYW4T7Ezg&oe=681FD94D"width:100%; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1);" />
         <button onclick="prevImage()" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:#be29ec; color:white; border-radius:50%; padding:10px;">❮</button>
         <button onclick="nextImage()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:#be29ec; color:white; border-radius:50%; padding:10px;">❯</button>
       </div>
@@ -224,19 +224,19 @@
 
     <!-- Secret Message -->
     <section style="text-align:center; padding:40px;">
-      <button onclick="document.getElementById('secret-modal').style.display='block'" style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock Secret Message 🔐</button>
+      <button onclick="document.getElementById('secret-modal').style.display='block'" style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock My Message 🔐</button>
       <div id="secret-modal" style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
-        <input id="code-input" type="password" placeholder="Enter code" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
+        <input id="code-input" type="password" placeholder="Enter code(the day when god sent you into my life)" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
         <br /><br />
         <button onclick="checkCode()" style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
-        <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 You found my hidden message! I love you forever and ever.</p>
+        <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen mo remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi lang isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey mo, sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo pa rin yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is on the day God sent you into my life. I love you so much forever and always</p>
       </div>
     </section>
 
     <!-- Memory Game / Quiz -->
     <section style="text-align:center; padding:50px; background:#fff;">
       <h2 style="color:#945cb4;">Do you remember it? 🧠💘</h2>
-      <p id="quiz-question">What’s our favorite food to eat together?</p>
+      <p id="quiz-question">Ano ang unang regalo na inigay ko sayo?</p>
       <div id="quiz-options" style="margin-top:20px;">
         <button>Option 1</button>
 <button>Option 2</button>
@@ -305,8 +305,8 @@
       // Quiz Game (Multi-question)
 const quizData = [
     {
-      question: "What’s our favorite food to eat together?",
-      options: ["Fried Chicken 🍗", "Spaghetti 🍝", "Sinigang 🍲"],
+      question: "Ano ang unang regalo na inigay ko sayo?",
+      options: ["Tulips lamp", "Portrait", "Rose"],
       correctIndex: 0
     },
     {
@@ -315,9 +315,9 @@ const quizData = [
       correctIndex: 2
     },
     {
-      question: "Anong tawagan natin madalas?",
-      options: ["Lovey & Mahal", "Bebe & Sweetie", "Honey & Babe"],
-      correctIndex: 0
+      question: "Sino madalas magselos?",
+      options: ["ako", "ikaw", "pareho"],
+      correctIndex: 2
     }
   ];
 
