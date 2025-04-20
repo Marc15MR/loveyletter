@@ -464,7 +464,7 @@ function addNote() {
     note.classList.add("note");
     note.innerHTML = `
       <p>${noteText}</p>
-      <button onclick="deleteNote(this)">.</button>
+      <button onclick="deleteNote(this)">x</button>
     `;
 
     // Append the note to the notes container
@@ -508,7 +508,7 @@ function loadNotes() {
       note.classList.add("note");
       note.innerHTML = `
         <p>${noteText}</p>
-        <button onclick="deleteNote(this)">.</button>
+        <button onclick="deleteNote(this)">x</button>
       `;
       document.getElementById("notesContainer").appendChild(note);
     });
