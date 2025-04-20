@@ -42,7 +42,7 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
-      /* Hero Section with Background Image */
+           /* Hero Section with Background Image */
       section.hero {
         height: 100vh;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -169,8 +169,79 @@
           width: 80%;
           padding: 20px;
         }
+        
+      /* Sticky Notes Styles */
+  .sticky-notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 50px;
+    background-color: #a476ff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .note {
+    background-color: #a476ff;
+    border: 1px solid #a476ff;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+    width: 100px;
+    position: relative
+  }
+
+  .note button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+      /* Notes Container */
+  #notesContainer {
+    margin-top: 20px;
+    width: 70%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 30px;
+    background-color: #fff;
+  }
+      
+        /* Message Form Styles */
+      .message-form {
+        margin: 5px;
+        padding: 35px;
+        background-color: white;
+        border-radius: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
-    </style>
+
+      .message-form input,
+      .message-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 0.5px solid #ccc;
+        border-radius: 15px;
+      }
+
+      .message-form button {
+        background-color: #a476ff;
+        color: purple;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+        </style> 
   </head>
   <body>
     <!-- Hero Section -->
@@ -207,8 +278,8 @@
 
     <!-- Popup Modal -->
     <section class="popup" id="popup">
-      <h2>1 JOHN 4:8</h2>
-      <p>God is love because in front of God your gonna be my love</p>
+      <h2>Surprise!</h2>
+      <p>May kasunod pa, abangan......</p>
       <button onclick="closePopup()">Close</button>
     </section>
 
@@ -239,7 +310,7 @@
         <input id="code-input" type="password" placeholder="Enter code" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
         <br /><br />
         <button onclick="checkCode()" style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
-        <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen mo remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi lang isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey mo, sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo pa rin yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hndi hindi kita iiwan. my next message is on the day when God sent you into my life. I love you so much forever and always</p>
+        <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen mo remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi lang isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey mo, sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo pa rin yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is on the day God sent you into my life. I love you so much forever and always</p>
       </div>
     </section>
 
@@ -254,8 +325,26 @@
 
       </div>
       <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
-    </section>
+      <!-- Sticky Notes Section -->
+    <div class="sticky-notes">
+      <h2>Sticky Notes</h2>
+      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+      <button onclick="addNote()">Add Note</button>
+      <div id="notesContainer"></div>
+    </div>  
 
+    <!-- Message Form Section -->
+    <div class="message-form">
+      <h2>Send Me a Message</h2>
+      <<form id="messageForm" action="https://formspree.io/f/mqaeoawk" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="formFeedback" style="color: green; display: none;"></p>
+    </div>
+        
     <!-- JavaScript -->
     <script>
       // Love Letter Toggle
@@ -315,12 +404,12 @@
       // Quiz Game (Multi-question)
 const quizData = [
     {
-      question: "Ano ang unang regalo na binigay ko sayo?",
+      question: "Ano ang unang regalo na inigay ko sayo?",
       options: ["Tulips lamp", "Portrait", "Rose"],
       correctIndex: 0
     },
     {
-      question: "Kailan ang una nating paguusap?",
+      question: "First conversation?",
       options: ["AUG 5", "JUNE 11", "JULY 23"],
       correctIndex: 2
     },
@@ -351,10 +440,10 @@ const quizData = [
     const feedback = document.getElementById("quiz-feedback");
 
     if (index === q.correctIndex) {
-      feedback.textContent = "Yan! ngayon alam mo na 💖";
+      feedback.textContent = "YAN! ngayon alam mo na 💖";
       feedback.style.color = "#4CAF50";
     } else {
-      feedback.textContent = "Ayy, di alam😝";
+      feedback.textContent = "Ayy, di alam";
       feedback.style.color = "#F44336";
     }
 
@@ -365,6 +454,69 @@ const quizData = [
   }
 
   window.onload = loadQuestion;
-    </script>
+    // Function to add a note
+function addNote() {
+  const noteInput = document.getElementById("noteInput");
+  const noteText = noteInput.value.trim();
+
+  if (noteText) {
+    const note = document.createElement("div");
+    note.classList.add("note");
+    note.innerHTML = `
+      <p>${noteText}</p>
+      <button onclick="deleteNote(this)">X</button>
+    `;
+
+    // Append the note to the notes container
+    document.getElementById("notesContainer").appendChild(note);
+
+    // Save the updated notes to localStorage
+    saveNotes();
+
+    // Clear the input field
+    noteInput.value = '';
+  }
+}
+
+// Function to delete a note
+function deleteNote(button) {
+  button.parentElement.remove();
+
+  // Save the updated notes to localStorage
+  saveNotes();
+}
+
+// Function to save notes to localStorage
+function saveNotes() {
+  const notes = [];
+  const noteElements = document.querySelectorAll(".note");
+
+  noteElements.forEach(note => {
+    notes.push(note.querySelector("p").innerText);
+  });
+
+  localStorage.setItem("stickyNotes", JSON.stringify(notes));
+}
+
+// Function to load notes from localStorage
+function loadNotes() {
+  const savedNotes = JSON.parse(localStorage.getItem("stickyNotes"));
+
+  if (savedNotes) {
+    savedNotes.forEach(noteText => {
+      const note = document.createElement("div");
+      note.classList.add("note");
+      note.innerHTML = `
+        <p>${noteText}</p>
+        <button onclick="deleteNote(this)">X</button>
+      `;
+      document.getElementById("notesContainer").appendChild(note);
+    });
+  }
+}
+
+// Load notes when the page loads
+window.onload = loadNotes;
+</script>
   </body>
 </html>
