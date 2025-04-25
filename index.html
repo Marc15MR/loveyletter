@@ -165,61 +165,28 @@
           padding: 30px;
         }
 
-        section.popup {
+        section.popup {                                                
           width: 80%;
           padding: 20px;
         }
         
-      /* Sticky Notes Styles */
-  .sticky-notes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-    padding: 50px;
-    background-color: #a476ff;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .note {
-    background-color: #a476ff;
-    border: 1px solid #a476ff;
-    border-radius: 30px;
-    padding: 10px;
-    margin: 5px;
-    width: 100px;
-    position: relative
-  }
-
-  .note button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: purple;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-      /* Notes Container */
-  #notesContainer {
-    margin-top: 20px;
-    width: 70%;
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    padding: 30px;
-    background-color: #fff;
-  }
+         .bible-verse-box {
+  background:  #fff8f0;
+  border: 2px dashed #945cb4;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
       
         /* Message Form Styles */
       .message-form {
-        margin: 5px;
-        padding: 35px;
-        background-color: white;
+        margin: 1px;
+        padding: 60px;
+        background-color: #945cb4;
         border-radius: 30px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
@@ -278,10 +245,15 @@
 
     <!-- Popup Modal -->
     <section class="popup" id="popup">
-      <h2>1 JOHN 4:8</h2>
-      <p>God is love because in front of God your gonna be my love</p>
+      <h2>1 PETER 5:10</h2>
+      <p>And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little while, will himself restore you and make you strong, firm and steadfast</p>
       <button onclick="closePopup()">Close</button>
     </section>
+
+    <div class="bible-verse-box">
+  <h3>📖 Daily Bible Verse </h3>
+  <p id="bible-verse">Loading...</p>
+</div>
 
     <!-- Gallery Section -->
 <section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
@@ -324,14 +296,7 @@
 <button>Option 3</button>
 
       </div>
-      <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
-      <!-- Sticky Notes Section -->
-    <div class="sticky-notes">
-      <h2>Sticky Notes</h2>
-      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
-      <button onclick="addNote()">Add Note</button>
-      <div id="notesContainer"></div>
-    </div>  
+      <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p> 
 
     <!-- Message Form Section -->
     <div class="message-form">
@@ -454,69 +419,53 @@ const quizData = [
   }
 
   window.onload = loadQuestion;
-    // Function to add a note
-function addNote() {
-  const noteInput = document.getElementById("noteInput");
-  const noteText = noteInput.value.trim();
+  
+    const verses = [
+    "Philippians 4:13 – I can do all things through Christ who strengthens me.",
+    "Jeremiah 29:11 – 'For I know the plans I have for you,' declares the Lord...",
+    "1 Corinthians 13:4 – Love is patient, love is kind. It does not envy...",
+    "Psalm 23:1 – The Lord is my shepherd; I shall not want.",
+    "Romans 8:28 – And we know that in all things God works for the good...",
+    "Proverbs 3:5 – Trust in the Lord with all your heart...",
+    "Song of Solomon 3:4 – I have found the one whom my soul loves.",
+    "Isaiah 41:10 – Do not fear, for I am with you...",
+    "Matthew 28:20 – I am with you always, even to the end of the age.",
+    "Lamentations 3:22-23 – His mercies are new every morning.",
+    "John 3:16 – For God so loved the world that He gave His one and only Son...",
+    "Romans 5:8 – But God demonstrates His own love for us in this: While we were still sinners, Christ died for us.",
+    "Proverbs 31:25 – She is clothed with strength and dignity, and she laughs without fear of the future.",
+    "Psalm 46:1 – God is our refuge and strength, an ever-present help in trouble.",
+    "Ephesians 2:8-9 – For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God...",
+    "Isaiah 40:31 – But those who hope in the Lord will renew their strength...",
+    "Hebrews 13:5 – Never will I leave you; never will I forsake you.",
+    "Matthew 11:28 – Come to me, all you who are weary and burdened, and I will give you rest.",
+    "1 Peter 5:7 – Cast all your anxiety on Him because He cares for you.",
+    "Romans 15:13 – May the God of hope fill you with all joy and peace as you trust in Him...",
+    "Joshua 1:9 – Have I not commanded you? Be strong and courageous. Do not be afraid...",
+    "Psalm 34:8 – Taste and see that the Lord is good; blessed is the one who takes refuge in Him.",
+    "2 Corinthians 5:7 – For we live by faith, not by sight.",
+    "James 1:5 – If any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach...",
+    "Romans 12:12 – Be joyful in hope, patient in affliction, faithful in prayer.",
+    "2 Timothy 1:7 – For God gave us a spirit not of fear but of power and love and self-control.",
+    "Colossians 3:23 – Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+    "Matthew 5:14 – You are the light of the world. A town built on a hill cannot be hidden.",
+    "Psalm 121:1-2 – I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
+    "Titus 3:5 – He saved us, not because of righteous things we had done, but because of His mercy.",
+    "Luke 1:37 – For no word from God will ever fail.",
+    "Deuteronomy 31:6 – Be strong and courageous. Do not be afraid or terrified because of them...",
+    "Matthew 6:33 – But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
+    "Romans 12:2 – Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
+    "Philippians 1:6 – Being confident of this, that He who began a good work in you will carry it on to completion until the day of Christ Jesus.",
+    "Psalm 119:105 – Your word is a lamp for my feet, a light on my path.",
+    "1 John 4:18 – There is no fear in love. But perfect love drives out fear...",
+  ];
 
-  if (noteText) {
-    const note = document.createElement("div");
-    note.classList.add("note");
-    note.innerHTML = `
-      <p>${noteText}</p>
-      <button onclick="deleteNote(this)">x</button>
-    `;
+  const today = new Date();
+  const index = today.getDate() % verses.length;
+  const verseBox = document.getElementById("bible-verse");
+  verseBox.textContent = verses[index];
 
-    // Append the note to the notes container
-    document.getElementById("notesContainer").appendChild(note);
 
-    // Save the updated notes to localStorage
-    saveNotes();
-
-    // Clear the input field
-    noteInput.value = '';
-  }
-}
-
-// Function to delete a note
-function deleteNote(button) {
-  button.parentElement.remove();
-
-  // Save the updated notes to localStorage
-  saveNotes();
-}
-
-// Function to save notes to localStorage
-function saveNotes() {
-  const notes = [];
-  const noteElements = document.querySelectorAll(".note");
-
-  noteElements.forEach(note => {
-    notes.push(note.querySelector("p").innerText);
-  });
-
-  localStorage.setItem("stickyNotes", JSON.stringify(notes));
-}
-
-// Function to load notes from localStorage
-function loadNotes() {
-  const savedNotes = JSON.parse(localStorage.getItem("stickyNotes"));
-
-  if (savedNotes) {
-    savedNotes.forEach(noteText => {
-      const note = document.createElement("div");
-      note.classList.add("note");
-      note.innerHTML = `
-        <p>${noteText}</p>
-        <button onclick="deleteNote(this)">x</button>
-      `;
-      document.getElementById("notesContainer").appendChild(note);
-    });
-  }
-}
-
-// Load notes when the page loads
-window.onload = loadNotes;
 </script>
   </body>
 </html>
