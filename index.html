@@ -112,6 +112,11 @@
         margin-bottom: 15px;
       }
 
+      section.love-letter p {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+      }
+
       @keyframes fadeIn {
         0% {
           opacity: 0;
@@ -169,7 +174,7 @@
           width: 80%;
           padding: 20px;
         }
-        
+
          .bible-verse-box {
   background:  #fff8f0;
   border: 2px dashed #945cb4;
@@ -181,7 +186,7 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
-      
+
         /* Message Form Styles */
       .message-form {
         margin: 5px;
@@ -219,7 +224,9 @@
         <div class="buttons">
           <button onclick="toggleLoveLetter()">My Valentines Letter</button>
           <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
-          <button onclick="openPopup()">Remember:</button>
+          <button 
+onclick="toggleLoveLetter3()">Kwento ko lang</button>
+          <button             onclick="openPopup()">Remember:</button>
         </div>
       </div>
     </section>
@@ -234,7 +241,7 @@
 
     <section class="love-letter" id="loveLetter2">
       <h2>Congratulations, lovey. You made it</h2>
-      <p>gusto ko lang sabihin proud na proud ako sayo, finally you now going to senior high school. after all sleepless nights, challenges, doubts, and those sacrifices so far, you finally made it to your next journey. kita ko yung effort at sipag na lagi mo binibigay sa pagaaral mo, I'am very of proud you, lovey.
+      <p>gusto ko lang sabihin proud ndoubtsproud ako sayo, finally you now going to senior high school. after all sleepless nights, challenges, doubts, and those sacrifices so far, you finally made it to your next journey. kita ko yung effort at sipag na lagi mo binibigay sa pagaaral mo, I'am very of proud you, lovey.
 </p>
       <p>gusto ko lang din sana sabihin na thank you. sinimulan ko ang school year na to with you until now kasama pa rin kita kahit na andaming naganap sa school year natin thankful pa rin ako kase ikaw ang kasama ko hanggang sa matapos ang school year nato. ihyk lagi ko pinagdadasal na sana sa next journey natin, kasama kita hanggang sa matupad yung pangarap mo. I always here to support you, kahit minsan di tayo magkaintindihan lagi pa rin ako nandito. di kita iiwan, di ako aalis sa tabi mo kahit magalit ka sakin ng sobra sobra, magsstay pa rin ako, susuportahan pa rin kita.
 </p>
@@ -243,6 +250,15 @@
       <p>Raymarc</p>
     </section>
 
+<section class="love-letter" id="loveLetter3">
+  <h2>Hi babi</h2>
+  <p>sorry kung ngayon ko lang nalagay nahihilo po kasi. paano ko ba to sisimulan. first of all I'm sorry po, ik kung hindi dahil sa katigasan ng ulo ko di to mangyayari, I'm really really sorry babi. until now di ko pa rin magawa di parusahan at disiplinahin sarili ko dahil sa nangyari. don't worry babi ganito talaga ginagawa ko pag nakakagawa ako ng mali sayo hindi ko kaya di parusahan sarili ko dahil sa katigasan ng ulo ko. it's already 1 month na simula nung cool off, mas matagal to compare nung last year cool off natin. actually isa to sa kinakatakot ko sa cool off na to. ayoko masanay na di kita kinakausap, kung tutuusin kasi ayoko masanay na hindi kita kinakausap, tinitiis ko lang at sinusunod yung mga sinasabi mo, alam ko kasi once na hindi ko nnmn sinunod may mangyayari. binibusy ko nalang sarili ko sa work ko habang hinihintay kita. halos wala na nga ko magawa dito e, ginagawa ko nalang tinititigan pic mo, tinitingnan mga followings at followers mo sa lahat ng socmed tas maghahanap ng ikakaselos or what. </p>
+  <p>let's move sa sinabi ko kagabi, yung kwento ko. actually unexpected to. sunday morning umalis kami ng fam ko kasama yung iba ko tita at lola ko, pupunta kasi kami ng bulacan para bisitahin yung lolo ko, so wala ako tulog non kasi may work ako nung midnight. natulog muna ako sa sasakyan habang papaalis pa lang. ang di ko lang expected pagising ko bat sa tapat ng bahay nyo kami naghintay, ginising kasi ako may pinapabili sakin habang hinihintay namin dalawa ko pinsan sa dalandanan e dun din kami dadaan, sabi dun daw muna kami magantay habang wala pa. so wala ako magawa kundi manahimik sa loob ng sasakyan kahit sinabi mo wag ako pupunta malapit sa bahay nyo. ang malala e tinanong pa ko ng ate ko kung saan daw bahay mo, di ko nalang sinagot baka malaman pa. btw tatlong beses namin dinaanan bahay nyo nung sunday, isa don nung 7pm, bukas pa nga pinto nyo non tas may tao sa labas. and yah, yan lang. mas maganda sana kung ikwekwento ko sayo to ng personal so para atleast makapag kwentuhan tayo. maybe next week add ulit ako dito, ayusin ko lang muna yung pc nasira kasi ulit kaya dito ako sa phone nagcode pero saglit lang nmn maayos and nagpapagaling din ako ng mga galos na nakuha ko nung sunday tumalon ba nmn kasi sa ilog </p>
+  <p>lagi mo tandaan nasa tabi mo lang ako di ako aalis sa tabi mo. magchat ka lang po</p>
+  <p>I love you so much babi, forever and always </p>
+  <p>Raymarc</p>
+</section>
+    
     <!-- Popup Modal -->
     <section class="popup" id="popup">
       <h2>1 PETER 5:10</h2>
@@ -309,7 +325,7 @@
       </form>
       <p id="formFeedback" style="color: green; display: none;"></p>
     </div>
-        
+
     <!-- JavaScript -->
     <script>
       // Love Letter Toggle
@@ -419,7 +435,7 @@ const quizData = [
   }
 
   window.onload = loadQuestion;
-  
+
     const verses = [
     "Philippians 4:13 – I can do all things through Christ who strengthens me.",
     "Jeremiah 29:11 – 'For I know the plans I have for you,' declares the Lord...",
@@ -465,6 +481,10 @@ const quizData = [
   const verseBox = document.getElementById("bible-verse");
   verseBox.textContent = verses[index];
 
+      function toggleLoveLetter3() {
+    const letter = document.getElementById("loveLetter3");
+    letter.style.display = (letter.style.display === "block") ? "none" : "block";
+      }
 
 </script>
   </body>
