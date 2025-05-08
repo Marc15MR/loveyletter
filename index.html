@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FOR LOVEY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
     <style>
         /* General Styles */
         body {
@@ -222,48 +223,6 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
-
-            .music-player {
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: rgba(255, 255, 255, 0.15);
-                backdrop-filter: blur(10px);
-                border: 2px dashed #f9c6d4;
-                padding: 10px 20px;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                z-index: 9999;
-            }
-
-
-
-
-            #playPauseBtn {
-                background: #f9c6d4;
-                border: none;
-                border-radius: 50%;
-                font-size: 1.5rem;
-                cursor: pointer;
-                padding: 8px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-                transition: background 0.3s ease;
-            }
-
-            #playPauseBtn:hover {
-                background: #ffdde1;
-            }
-
-            .track-title {
-                font-family: 'Comic Sans MS', cursive;
-                font-size: 0.9rem;
-                color: #fff;
-                text-shadow: 1px 1px 3px #000;
-            }
     </style>
 </head>
 
@@ -271,8 +230,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="content">
-            <h1>Where Memories Bloom</h1>
-            <p>ALL MY MESSAGE FOR YOU</p>
+            <h1 id="headerTitle"></h1>
+            <p>I LOVE YOU FOREVER AND ALWAYS</p>
             <div class="buttons">
                 <button onclick="toggleLoveLetter()">My Valentines Letter</button>
                 <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
@@ -461,13 +420,6 @@
                 <p id="formFeedback" style="color: green; display: none;"></p>
         </div>
 
-        <div class="music-player">
-            <button id="playPauseBtn" onclick="toggleMusic()">
-                <span id="musicIcon">🎵</span>
-            </button>
-            <span class="track-title">"IF" - by bread</span>
-            <audio id="bg-music" src="if [n-cK70DXsSA].mp3" loop></audio>
-        </div>
 
         <!-- JavaScript -->
         <script>
@@ -619,6 +571,24 @@
                 "1 John 4:18 – There is no fear in love. But perfect love drives out fear...",
             ];
 
+
+            const typewriter = new Typewriter('#headerTitle', {
+                loop: true,
+                delay: 75,
+            });
+
+            typewriter
+                .typeString("Where Memories Bloom")
+                .pauseFor(1500)
+                .deleteAll()
+                .typeString("ALL MY MESSAGE FOR YOU")
+                .pauseFor(1500)
+                .deleteAll()
+                .typeString("I'll wait for you")
+                .pauseFor(2000)
+                .start();
+
+
             const today = new Date();
             const index = today.getDate() % verses.length;
             const verseBox = document.getElementById("bible-verse");
@@ -629,33 +599,9 @@
                 letter.style.display = (letter.style.display === "block") ? "none" : "block";
             }
 
-            const music = document.getElementById("bg-music");
-            const icon = document.getElementById("musicIcon");
-
-            function toggleMusic() {
-                if (music.paused) {
-                    music.play();
-                    icon.textContent = "⏸️";
-                } else {
-                    music.pause();
-                    icon.textContent = "🎵";
-                }
-            }
-
-            // Optional: Play after user interaction (bypasses autoplay block)
-            window.addEventListener("click", () => {
-                if (music.paused) {
-                    music.play().then(() => {
-                        icon.textContent = "⏸️";
-                    }).catch(e => {
-                        // Autoplay blocked
-                    });
-                }
-            }, { once: true });
 
 
-        
-             </script>
+        </script>
 </body>
 
 </html>
