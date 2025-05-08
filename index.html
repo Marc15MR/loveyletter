@@ -1,193 +1,202 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOR LOVEY</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <style>
-      /* General Styles */
-      body {
-        font-family: "Cursive", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #945cb4;
-        color: #3f3f3f;
-        overflow-x: hidden;
-      }
 
-      h1,
-      h2 {
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FOR LOVEY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* General Styles */
+    body {
+      font-family: "Cursive", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #945cb4;
+      color: #3f3f3f;
+      overflow-x: hidden;
+    }
 
-      a {
-        text-decoration: none;
-        color: purple;
-      }
+    h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
 
-      button {
-        cursor: pointer;
-        border: none;
-        outline: none;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
+    a {
+      text-decoration: none;
+      color: purple;
+    }
 
-      button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-           /* Hero Section with Background Image */
-      section.hero {
-        height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url("https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/487416541_8851714388261296_8904122459602987831_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH-Ff7qjCbDPWxZgvXu5l2FYuAkGoaO8Uxi4CQaho7xTLW_LemMv3-vHYePsfpDXSBHDBsYN-buhv9Ut0dPeSnd&_nc_ohc=6nyLfD7QF98Q7kNvwFpi4oi&_nc_oc=Adna1TKA-Mt8R3drP-3W8cGHm1BV8AKP2g568qCRIIqwLta29FqTazKr08h8yww_0MmR3WzV22ANmo3TtH0O-ZKR&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AFP7HJnf1SLQlIe0oDcahktzS_3p-0ACAB7UIUJ09TMtA&oe=681DD1B2") center/cover no-repeat;
-        color: white;
-        display: flex;
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hero Section with Background Image */
+    section.hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/487416541_8851714388261296_8904122459602987831_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH-Ff7qjCbDPWxZgvXu5l2FYuAkGoaO8Uxi4CQaho7xTLW_LemMv3-vHYePsfpDXSBHDBsYN-buhv9Ut0dPeSnd&_nc_ohc=6nyLfD7QF98Q7kNvwFpi4oi&_nc_oc=Adna1TKA-Mt8R3drP-3W8cGHm1BV8AKP2g568qCRIIqwLta29FqTazKr08h8yww_0MmR3WzV22ANmo3TtH0O-ZKR&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AFP7HJnf1SLQlIe0oDcahktzS_3p-0ACAB7UIUJ09TMtA&oe=681DD1B2") center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    section.hero .content {
+      z-index: 2;
+    }
+
+    section.hero h1 {
+      font-size: 4em;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+      margin-bottom: 10px;
+    }
+
+    section.hero p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+
+    section.hero button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      min-width: 200px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 720px) {
+      section.hero .buttons {
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
+      }
+    }
+
+
+    section.hero button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #a476ff;
+      border-radius: 50px;
+    }
+
+    section.hero button:hover {
+      background-color: #be29ec;
+    }
+
+    /* Love Letter Sections */
+    section.love-letter {
+      display: none;
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      width: 60%;
+      margin: 50px auto;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 1s ease-out forwards;
+      z-index: 1;
+    }
+
+    section.love-letter h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    section.love-letter p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    section.love-letter p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      section.hero .content {
-        z-index: 2;
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
+    /* Popup Modal */
+    section.popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      z-index: 10;
+    }
+
+    section.popup button {
+      padding: 10px 20px;
+      background-color: #ff66b2;
+      color: white;
+      border-radius: 50px;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 720px) {
       section.hero h1 {
-        font-size: 4em;
-        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
-        margin-bottom: 10px;
+        font-size: 2.5em;
       }
 
       section.hero p {
-        font-size: 1.5em;
-        margin-bottom: 40px;
-      }
-
-      section.hero .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        font-size: 1.2em;
       }
 
       section.hero button {
-        padding: 15px 30px;
-        font-size: 1.2em;
-        color: white;
-        background-color: #a476ff;
-        border-radius: 50px;
+        font-size: 1em;
+        padding: 12px 24px;
       }
 
-      section.hero button:hover {
-        background-color: #be29ec;
-      }
-
-      /* Love Letter Sections */
       section.love-letter {
-        display: none;
-        padding: 40px;
-        background-color: white;
-        border-radius: 15px;
-        width: 60%;
-        margin: 50px auto;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        animation: fadeIn 1s ease-out forwards;
-        z-index: 1;
-      }
-
-      section.love-letter h2 {
-        font-size: 2em;
-        margin-bottom: 20px;
-      }
-
-      section.love-letter p {
-        font-size: 1.2em;
-        margin-bottom: 15px;
-      }
-
-      section.love-letter p {
-        font-size: 1.2em;
-        margin-bottom: 15px;
-      }
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Popup Modal */
-      section.popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
+        width: 80%;
         padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      }
+
+      section.popup {
+        width: 80%;
+        padding: 20px;
+      }
+
+      .bible-verse-box {
+        background: #fff8f0;
+        border: 2px dashed #945cb4;
+        padding: 20px;
+        border-radius: 20px;
+        font-family: 'Caveat', cursive;
         text-align: center;
-        z-index: 10;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
       }
 
-      section.popup button {
-        padding: 10px 20px;
-        background-color: #ff66b2;
-        color: white;
-        border-radius: 50px;
-      }
-
-      /* Mobile Responsiveness */
-      @media (max-width: 720px) {
-        section.hero h1 {
-          font-size: 2.5em;
-        }
-
-        section.hero p {
-          font-size: 1.2em;
-        }
-
-        section.hero button {
-          font-size: 1em;
-          padding: 12px 24px;
-        }
-
-        section.love-letter {
-          width: 80%;
-          padding: 30px;
-        }
-
-        section.popup {                                                
-          width: 80%;
-          padding: 20px;
-        }
-
-         .bible-verse-box {
-  background:  #fff8f0;
-  border: 2px dashed #945cb4;
-  padding: 20px;
-  border-radius: 20px;
-  font-family: 'Caveat', cursive;
-  text-align: center;
-  margin: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-        /* Message Form Styles */
+      /* Message Form Styles */
       .message-form {
         margin: 5px;
         padding: 55px;
@@ -213,106 +222,155 @@
         border-radius: 5px;
         cursor: pointer;
       }
-        </style> 
-  </head>
-  <body>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="content">
-        <h1>Where Memories Bloom</h1>
-        <p>ALL MY MESSAGE FOR YOU</p>
-        <div class="buttons">
-          <button onclick="toggleLoveLetter()">My Valentines Letter</button>
-          <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
-          <button 
-onclick="toggleLoveLetter3()">Kwento ko lang</button>
-          <button             onclick="openPopup()">Remember:</button>
-        </div>
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <h1>Where Memories Bloom</h1>
+      <p>ALL MY MESSAGE FOR YOU</p>
+      <div class="buttons">
+        <button onclick="toggleLoveLetter()">My Valentines Letter</button>
+        <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
+        <button onclick="toggleLoveLetter3()">Kwento ko lang</button>
+        <button onclick="openPopup()">Remember:</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Love Letter Sections -->
-    <section class="love-letter" id="loveLetter">
-      <h2>Hi lovey</h2>
-      <p>gusto ko lang sana sabihin na happy happy valentines sayo. di ko alam kung gaano ako kaswerte na nakilala kita at sa paano mo ko minahal at tinrato ng tama.every moment na kasama kita, sa bawat oras na nakakausap kita, pakiramdam ko buong buo na ang araw ko, ang mga bawat yakap at i love you mo na nagiging pahinga ko, at sa paano mo napapawi yung pagod ko. thank you lovey kase ikaw yung unang taong minahal ako ng ganito, thank you kase lagi ka nandyan sa tabi ko kahit na minsan nagkakaroon tayo ng misunderstanding. gusto ko lang sana ipaalala sayo na handa ako maghintay sayo kahit abutin pa ng taon, hindi mo ko kailangan alalahanin na baka iwan kita balang araw at sumuko sa kakahintay sayo, hindi hindi ko gagawin yan lovey, di ako mapapagod na alalahanin at intindihin ka. di rin ako nagmamadali na mangyare agad iyon kahit na alam na ng magulang ko kung ano na meron tayo ngayon, gusto ko ituloy mo at unahin mo yung pag-aaral mo, lalo na sila tita. gusto ko lang din sana sabihin lagi ako nasa tabi mo galit ka man o hindi lagi ako nandito.thankyou lovey sa love na binibigay mo at sa paano mo ko tinrato ng tama, ikaw lang yung girl na gusto ko at ipaglalaban ko hanggang sa huli, once again thankyou lovey and I love you so muchhhhhhhh</p>
-      <p>your future at makulit na boyfriend,</p>
-      <p>Raymarc</p>
-    </section>
+  <!-- Love Letter Sections -->
+  <section class="love-letter" id="loveLetter">
+    <h2>Hi lovey</h2>
+    <p>gusto ko lang sana sabihin na happy happy valentines sayo. di ko alam kung gaano ako kaswerte na nakilala kita at
+      sa paano mo ko minahal at tinrato ng tama.every moment na kasama kita, sa bawat oras na nakakausap kita,
+      pakiramdam ko buong buo na ang araw ko, ang mga bawat yakap at i love you mo na nagiging pahinga ko, at sa paano
+      mo napapawi yung pagod ko. thank you lovey kase ikaw yung unang taong minahal ako ng ganito, thank you kase lagi
+      ka nandyan sa tabi ko kahit na minsan nagkakaroon tayo ng misunderstanding. gusto ko lang sana ipaalala sayo na
+      handa ako maghintay sayo kahit abutin pa ng taon, hindi mo ko kailangan alalahanin na baka iwan kita balang araw
+      at sumuko sa kakahintay sayo, hindi hindi ko gagawin yan lovey, di ako mapapagod na alalahanin at intindihin ka.
+      di rin ako nagmamadali na mangyare agad iyon kahit na alam na ng magulang ko kung ano na meron tayo ngayon, gusto
+      ko ituloy mo at unahin mo yung pag-aaral mo, lalo na sila tita. gusto ko lang din sana sabihin lagi ako nasa tabi
+      mo galit ka man o hindi lagi ako nandito.thankyou lovey sa love na binibigay mo at sa paano mo ko tinrato ng tama,
+      ikaw lang yung girl na gusto ko at ipaglalaban ko hanggang sa huli, once again thankyou lovey and I love you so
+      muchhhhhhhh</p>
+    <p>your future at makulit na boyfriend,</p>
+    <p>Raymarc</p>
+  </section>
 
-    <section class="love-letter" id="loveLetter2">
-      <h2>Congratulations, lovey. You made it</h2>
-      <p>gusto ko lang sabihin proud ndoubtsproud ako sayo, finally you now going to senior high school. after all sleepless nights, challenges, doubts, and those sacrifices so far, you finally made it to your next journey. kita ko yung effort at sipag na lagi mo binibigay sa pagaaral mo, I'am very of proud you, lovey.
-</p>
-      <p>gusto ko lang din sana sabihin na thank you. sinimulan ko ang school year na to with you until now kasama pa rin kita kahit na andaming naganap sa school year natin thankful pa rin ako kase ikaw ang kasama ko hanggang sa matapos ang school year nato. ihyk lagi ko pinagdadasal na sana sa next journey natin, kasama kita hanggang sa matupad yung pangarap mo. I always here to support you, kahit minsan di tayo magkaintindihan lagi pa rin ako nandito. di kita iiwan, di ako aalis sa tabi mo kahit magalit ka sakin ng sobra sobra, magsstay pa rin ako, susuportahan pa rin kita.
-</p>
-      <p>once again, congratulations lovey you finally did it. I love you, forever and always
-</p>
-      <p>Raymarc</p>
-    </section>
+  <section class="love-letter" id="loveLetter2">
+    <h2>Congratulations, lovey. You made it</h2>
+    <p>gusto ko lang sabihin proud ndoubtsproud ako sayo, finally you now going to senior high school. after all
+      sleepless nights, challenges, doubts, and those sacrifices so far, you finally made it to your next journey. kita
+      ko yung effort at sipag na lagi mo binibigay sa pagaaral mo, I'am very of proud you, lovey.
+    </p>
+    <p>gusto ko lang din sana sabihin na thank you. sinimulan ko ang school year na to with you until now kasama pa rin
+      kita kahit na andaming naganap sa school year natin thankful pa rin ako kase ikaw ang kasama ko hanggang sa
+      matapos ang school year nato. ihyk lagi ko pinagdadasal na sana sa next journey natin, kasama kita hanggang sa
+      matupad yung pangarap mo. I always here to support you, kahit minsan di tayo magkaintindihan lagi pa rin ako
+      nandito. di kita iiwan, di ako aalis sa tabi mo kahit magalit ka sakin ng sobra sobra, magsstay pa rin ako,
+      susuportahan pa rin kita.
+    </p>
+    <p>once again, congratulations lovey you finally did it. I love you, forever and always
+    </p>
+    <p>Raymarc</p>
+  </section>
 
-<section class="love-letter" id="loveLetter3">
-  <h2>Hi babi</h2>
-  <p>sorry kung ngayon ko lang nalagay nahihilo po kasi. paano ko ba to sisimulan. first of all I'm sorry po, ik kung hindi dahil sa katigasan ng ulo ko di to mangyayari, I'm really really sorry babi. until now di ko pa rin magawa di parusahan at disiplinahin sarili ko dahil sa nangyari. don't worry babi ganito talaga ginagawa ko pag nakakagawa ako ng mali sayo hindi ko kaya di parusahan sarili ko dahil sa katigasan ng ulo ko. it's already 1 month na simula nung cool off, mas matagal to compare nung last year cool off natin. actually isa to sa kinakatakot ko sa cool off na to. ayoko masanay na di kita kinakausap, kung tutuusin kasi ayoko masanay na hindi kita kinakausap, tinitiis ko lang at sinusunod yung mga sinasabi mo, alam ko kasi once na hindi ko nnmn sinunod may mangyayari. binibusy ko nalang sarili ko sa work ko habang hinihintay kita. halos wala na nga ko magawa dito e, ginagawa ko nalang tinititigan pic mo, tinitingnan mga followings at followers mo sa lahat ng socmed tas maghahanap ng ikakaselos or what. </p>
-  <p>let's move sa sinabi ko kagabi, yung kwento ko. actually unexpected to. sunday morning umalis kami ng fam ko kasama yung iba ko tita at lola ko, pupunta kasi kami ng bulacan para bisitahin yung lolo ko, so wala ako tulog non kasi may work ako nung midnight. natulog muna ako sa sasakyan habang papaalis pa lang. ang di ko lang expected pagising ko bat sa tapat ng bahay nyo kami naghintay, ginising kasi ako may pinapabili sakin habang hinihintay namin dalawa ko pinsan sa dalandanan e dun din kami dadaan, sabi dun daw muna kami magantay habang wala pa. so wala ako magawa kundi manahimik sa loob ng sasakyan kahit sinabi mo wag ako pupunta malapit sa bahay nyo. ang malala e tinanong pa ko ng ate ko kung saan daw bahay mo, di ko nalang sinagot baka malaman pa. btw tatlong beses namin dinaanan bahay nyo nung sunday, isa don nung 7pm, bukas pa nga pinto nyo non tas may tao sa labas. and yah, yan lang. mas maganda sana kung ikwekwento ko sayo to ng personal so para atleast makapag kwentuhan tayo. maybe next week add ulit ako dito, ayusin ko lang muna yung pc nasira kasi ulit kaya dito ako sa phone nagcode pero saglit lang nmn maayos and nagpapagaling din ako ng mga galos na nakuha ko nung sunday tumalon ba nmn kasi sa ilog </p>
-  <p>lagi mo tandaan nasa tabi mo lang ako di ako aalis sa tabi mo. magchat ka lang po</p>
-  <p>I love you so much babi, forever and always </p>
-  <p>Raymarc</p>
-</section>
-    
-    <!-- Popup Modal -->
-    <section class="popup" id="popup">
-      <h2>1 PETER 5:10</h2>
-      <p>And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little while, will himself restore you and make you strong, firm and steadfast</p>
-      <button onclick="closePopup()">Close</button>
-    </section>
+  <section class="love-letter" id="loveLetter3">
+    <h2>Hi babi</h2>
+    <p>sorry kung ngayon ko lang nalagay nahihilo po kasi. paano ko ba to sisimulan. first of all I'm sorry po, ik kung
+      hindi dahil sa katigasan ng ulo ko di to mangyayari, I'm really really sorry babi. until now di ko pa rin magawa
+      di parusahan at disiplinahin sarili ko dahil sa nangyari. don't worry babi ganito talaga ginagawa ko pag
+      nakakagawa ako ng mali sayo hindi ko kaya di parusahan sarili ko dahil sa katigasan ng ulo ko. it's already 1
+      month na simula nung cool off, mas matagal to compare nung last year cool off natin. actually isa to sa
+      kinakatakot ko sa cool off na to. ayoko masanay na di kita kinakausap, kung tutuusin kasi ayoko masanay na hindi
+      kita kinakausap, tinitiis ko lang at sinusunod yung mga sinasabi mo, alam ko kasi once na hindi ko nnmn sinunod
+      may mangyayari. binibusy ko nalang sarili ko sa work ko habang hinihintay kita. halos wala na nga ko magawa dito
+      e, ginagawa ko nalang tinititigan pic mo, tinitingnan mga followings at followers mo sa lahat ng socmed tas
+      maghahanap ng ikakaselos or what. </p>
+    <p>let's move sa sinabi ko kagabi, yung kwento ko. actually unexpected to. sunday morning umalis kami ng fam ko
+      kasama yung iba ko tita at lola ko, pupunta kasi kami ng bulacan para bisitahin yung lolo ko, so wala ako tulog
+      non kasi may work ako nung midnight. natulog muna ako sa sasakyan habang papaalis pa lang. ang di ko lang expected
+      pagising ko bat sa tapat ng bahay nyo kami naghintay, ginising kasi ako may pinapabili sakin habang hinihintay
+      namin dalawa ko pinsan sa dalandanan e dun din kami dadaan, sabi dun daw muna kami magantay habang wala pa. so
+      wala ako magawa kundi manahimik sa loob ng sasakyan kahit sinabi mo wag ako pupunta malapit sa bahay nyo. ang
+      malala e tinanong pa ko ng ate ko kung saan daw bahay mo, di ko nalang sinagot baka malaman pa. btw tatlong beses
+      namin dinaanan bahay nyo nung sunday, isa don nung 7pm, bukas pa nga pinto nyo non tas may tao sa labas. and yah,
+      yan lang. mas maganda sana kung ikwekwento ko sayo to ng personal so para atleast makapag kwentuhan tayo. maybe
+      next week add ulit ako dito, ayusin ko lang muna yung pc nasira kasi ulit kaya dito ako sa phone nagcode pero
+      saglit lang nmn maayos and nagpapagaling din ako ng mga galos na nakuha ko nung sunday tumalon ba nmn kasi sa ilog
+    </p>
+    <p>lagi mo tandaan nasa tabi mo lang ako di ako aalis sa tabi mo. magchat ka lang po</p>
+    <p>I love you so much babi, forever and always </p>
+    <p>Raymarc</p>
+  </section>
 
-    <div class="bible-verse-box">
-  <h3>📖 Daily Bible Verse </h3>
-  <p id="bible-verse">Loading...</p>
-</div>
+  <!-- Popup Modal -->
+  <section class="popup" id="popup">
+    <h2>1 PETER 5:10</h2>
+    <p>And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little while,
+      will himself restore you and make you strong, firm and steadfast</p>
+    <button onclick="closePopup()">Close</button>
+  </section>
 
-    <!-- Gallery Section -->
-<section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
-  <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
-  <div style="position: relative; max-width: 600px; margin: 0 auto;">
-    <img id="gallery-img"
-      src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/482886877_1237407061151420_4020204477210282448_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH8JEkhhW-H8fsGekgBvEs2YWa-MMINn0hhZr4wwg2fSAx4tWZBsMFyKoSpkESwxJwTPc10WmKltB04eUh7gdqB&_nc_ohc=hqR026ndE5QQ7kNvwHmTFF_&_nc_oc=AdmDW_hBoOcHrV1gZK1EJn4s1U9tzSaVvbp7HmO-jGKvZTzRAdUkwYnN1SS0UtuKWkkm9D4Ve1Ff6vL3pPcw8rb3&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AFTJz_TddO39iiiLEuna5upg89aL1WwAEZmUdYW4T7Ezg&oe=681FD94D"
-      style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
-
-    <!-- Navigation buttons -->
-    <button onclick="prevImage()"
-      style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-      ❮
-    </button>
-    <button onclick="nextImage()"
-      style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-      ❯
-    </button>
+  <div class="bible-verse-box">
+    <h3>📖 Daily Bible Verse </h3>
+    <p id="bible-verse">Loading...</p>
   </div>
-</section>
 
-    <!-- Secret Message -->
-    <section style="text-align:center; padding:40px;">
-      <button onclick="document.getElementById('secret-modal').style.display='block'" style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock My Message 🔐</button>
-      <div id="secret-modal" style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
-        <input id="code-input" type="password" placeholder="Enter code" style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
-        <br /><br />
-        <button onclick="checkCode()" style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
-        <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen mo remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi lang isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey mo, sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo pa rin yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is on the day God sent you into my life. I love you so much forever and always</p>
-      </div>
-    </section>
+  <!-- Gallery Section -->
+  <section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
+    <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
+    <div style="position: relative; max-width: 600px; margin: 0 auto;">
+      <img id="gallery-img"
+        src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/482886877_1237407061151420_4020204477210282448_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH8JEkhhW-H8fsGekgBvEs2YWa-MMINn0hhZr4wwg2fSAx4tWZBsMFyKoSpkESwxJwTPc10WmKltB04eUh7gdqB&_nc_ohc=hqR026ndE5QQ7kNvwHmTFF_&_nc_oc=AdmDW_hBoOcHrV1gZK1EJn4s1U9tzSaVvbp7HmO-jGKvZTzRAdUkwYnN1SS0UtuKWkkm9D4Ve1Ff6vL3pPcw8rb3&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AFTJz_TddO39iiiLEuna5upg89aL1WwAEZmUdYW4T7Ezg&oe=681FD94D"
+        style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
 
-    <!-- Memory Game / Quiz -->
-    <section style="text-align:center; padding:50px; background:#fff;">
-      <h2 style="color:#945cb4;">Do you remember it? 🧠💘</h2>
-      <p id="quiz-question">Ano ang unang regalo na inigay ko sayo?</p>
-      <div id="quiz-options" style="margin-top:20px;">
-        <button>Option 1</button>
-<button>Option 2</button>
-<button>Option 3</button>
+      <!-- Navigation buttons -->
+      <button onclick="prevImage()"
+        style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        ❮
+      </button>
+      <button onclick="nextImage()"
+        style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        ❯
+      </button>
+    </div>
+  </section>
 
-      </div>
-      <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p> 
+  <!-- Secret Message -->
+  <section style="text-align:center; padding:40px;">
+    <button onclick="document.getElementById('secret-modal').style.display='block'"
+      style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock My Message
+      🔐</button>
+    <div id="secret-modal"
+      style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
+      <input id="code-input" type="password" placeholder="Enter code"
+        style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
+      <br /><br />
+      <button onclick="checkCode()"
+        style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
+      <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen mo
+        remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi lang
+        isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey mo,
+        sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo pa rin
+        yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is on the
+        day God sent you into my life. I love you so much forever and always</p>
+    </div>
+  </section>
+
+  <!-- Memory Game / Quiz -->
+  <section style="text-align:center; padding:50px; background:#fff;">
+    <h2 style="color:#945cb4;">Do you remember it? 🧠💘</h2>
+    <p id="quiz-question">Ano ang unang regalo na inigay ko sayo?</p>
+    <div id="quiz-options" style="margin-top:20px;">
+      <button>Option 1</button>
+      <button>Option 2</button>
+      <button>Option 3</button>
+
+    </div>
+    <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
 
     <!-- Message Form Section -->
     <div class="message-form">
@@ -322,8 +380,8 @@ onclick="toggleLoveLetter3()">Kwento ko lang</button>
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
-      </form>
-      <p id="formFeedback" style="color: green; display: none;"></p>
+        </form>
+        <p id="formFeedback" style="color: green; display: none;"></p>
     </div>
 
     <!-- JavaScript -->
@@ -348,14 +406,14 @@ onclick="toggleLoveLetter3()">Kwento ko lang</button>
 
       // Gallery Slideshow
       const images = [
-  "https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/488604257_2974803196026043_8499903081581162923_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHfxUIxdEXhlKCOenZjF-nzUY21FuLb9KJRjbUW4tv0oi9oNBweits9Z0ra9VLYpVKB5H3cyhNI0D1c0_RkKF0P&_nc_ohc=vWmxUaqAChQQ7kNvwHFaWLh&_nc_oc=Adn8myBDJmar7fbjRym3cRPL0WirADpbr2i3l8gslZS8Xffbz0HIOBfRwPAAPrZsp8BAjkKwebQjmYhWT2yyOEMP&_nc_zt=23&_nc_ht=scontent.fmnl4-3.fna&oh=03_Q7cD2AF2pBHSMbOsQdRIMwZCi9vRlxnopfRWCJZmqL7JLN6CQw&oe=681FB594",
-  "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/488770809_1825188705543658_5438933372127191020_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGLv-5tEo3DTi8lw3V2jnpEFLRBWjrj-IsUtEFaOuP4i8IjCzB62BkI90nriuGwlV8UAG7QTDA-lB7AJbTF2BF2&_nc_ohc=B4P-3mJ0iCcQ7kNvwF2Wv-K&_nc_oc=AdkJ8xO2CELgG8DfGpgLLI0ftIrwdOVvyq1IZaBvQkwqa1478EWpwwnsGJ0kfncs4iLOejqwF4yYp4qqiBS8CDa9&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2AHnH9LYLiw-elMU-hvj2XrY6hBVyFYFdwgsQWQcxkjFMA&oe=681FDEA1",
-  "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/488790759_1581576425857576_8610112663295236217_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGZQw3OcxeKi2MMcc9MCDxLwnoQpO9pLK7CehCk72ksrsnmYn_hxCQ9ChDRZPOepJRqRZ6HjzaiCEs_fMoSmvoF&_nc_ohc=HdCIKs5xge8Q7kNvwElkFI9&_nc_oc=AdkG_fh7aNotLtfgT8Idv88nop-Vk8f-fS-kK3hSOqig3aw1jxj6O6re3Z5AXqG-gbciTBAR4NOOL5dHm83Ie35D&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AHcHUOQlWUR-U7a4vRGL6q_Hq51wn3mwPqTZNxGOahWSA&oe=681FB8D4",
-  "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/488791425_1314933513072369_265696250647553996_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEt3JM092gkKCtSa0qQpjadc8-OxEXSqnhzz47ERdKqeD-s0TGrR0GhgATbXuX5LvuaFslWnKY6vbFOpPTz8A46&_nc_ohc=FSuUdRMUlHwQ7kNvwHgKU5t&_nc_oc=Adl2Dw88FZHArk7Eya3y8gvVr0dp3Hv6mc6VclC2yTrztPgGgAHh1R33_mq8A592c7H0miys5JBdiDx2623JTCrD&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AGkPJty5Q_GM2N_Qu2Yz2duoAnban5RXnG5E4VaUxrp9w&oe=681FCE0C",
-  "https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/488532524_1399009634454856_3254566045160113807_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeE31Yx9-AC62tTheOKSvYqoQXT1PoGj1-xBdPU-gaPX7J9aETbf9ON3Tqfrsl_66LMwpIObHGrFFtWQU4_Lib9G&_nc_ohc=kePc0H-oYTEQ7kNvwHiYMOF&_nc_oc=AdmpoAhmTyuKbtrFxHM6I4qsM-6_6JHyk90PMXhh1RW-xXQpnbes6lX28ON8f01LEiTWTU9VnjzUuLnZbf4pK7hl&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2AH0Ykmvqi5ontl6BiAhs3e8YTVddHlyW5Ha3-0LvH2TNA&oe=681FBE17",
-  "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/490190591_1019367916299516_123640643728237505_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEHMDKDPqNixAM57Qt-1C3iVLKhd2XH8vJUsqF3Zcfy8krPE9Cw7qipxZrrmJTQ87IQE1HhAsdVyfQmtiz4fHye&_nc_ohc=oPd5aCnXGQQQ7kNvwETZAe9&_nc_oc=AdmUzp25lrxE-RMNRya23jKp-9VV4UZ1kr3ceBstm1Nl4clqYeTlR3casGPmvXCwQad0F6WIhB021MgxZTJ7kfch&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2AGe4-atRGkmFArfizq05dArwmeuVq7oPmKGDCfN8vMk0w&oe=681FCA95", 
-  "https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/490267216_1226202259107904_1677072771600441249_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeG-lVk8IjVWFvQBtewBYXI1QvqzzknrUdhC-rPOSetR2CMa419fJYlEWdvHfs3OLAbnX1-r9QC9VP4rLg2CUbv7&_nc_ohc=juLk84olpSAQ7kNvwE1f2IZ&_nc_oc=AdmB7UZhQn-hls7VKP20Kpg2b6uCMAURifoqE6Ki2v5Ri7IxHx49bMglC6v5gBCyEPyLvkx-3WByBbBX70OBwSMF&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AHi4jtDodzzIHcaBRTa0ntuIr4fUMNY6M6x7aO6HCtWmA&oe=681FBE57",      
-];
+        "https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/488604257_2974803196026043_8499903081581162923_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHfxUIxdEXhlKCOenZjF-nzUY21FuLb9KJRjbUW4tv0oi9oNBweits9Z0ra9VLYpVKB5H3cyhNI0D1c0_RkKF0P&_nc_ohc=vWmxUaqAChQQ7kNvwHFaWLh&_nc_oc=Adn8myBDJmar7fbjRym3cRPL0WirADpbr2i3l8gslZS8Xffbz0HIOBfRwPAAPrZsp8BAjkKwebQjmYhWT2yyOEMP&_nc_zt=23&_nc_ht=scontent.fmnl4-3.fna&oh=03_Q7cD2AF2pBHSMbOsQdRIMwZCi9vRlxnopfRWCJZmqL7JLN6CQw&oe=681FB594",
+        "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/488770809_1825188705543658_5438933372127191020_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGLv-5tEo3DTi8lw3V2jnpEFLRBWjrj-IsUtEFaOuP4i8IjCzB62BkI90nriuGwlV8UAG7QTDA-lB7AJbTF2BF2&_nc_ohc=B4P-3mJ0iCcQ7kNvwF2Wv-K&_nc_oc=AdkJ8xO2CELgG8DfGpgLLI0ftIrwdOVvyq1IZaBvQkwqa1478EWpwwnsGJ0kfncs4iLOejqwF4yYp4qqiBS8CDa9&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2AHnH9LYLiw-elMU-hvj2XrY6hBVyFYFdwgsQWQcxkjFMA&oe=681FDEA1",
+        "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/488790759_1581576425857576_8610112663295236217_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGZQw3OcxeKi2MMcc9MCDxLwnoQpO9pLK7CehCk72ksrsnmYn_hxCQ9ChDRZPOepJRqRZ6HjzaiCEs_fMoSmvoF&_nc_ohc=HdCIKs5xge8Q7kNvwElkFI9&_nc_oc=AdkG_fh7aNotLtfgT8Idv88nop-Vk8f-fS-kK3hSOqig3aw1jxj6O6re3Z5AXqG-gbciTBAR4NOOL5dHm83Ie35D&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AHcHUOQlWUR-U7a4vRGL6q_Hq51wn3mwPqTZNxGOahWSA&oe=681FB8D4",
+        "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/488791425_1314933513072369_265696250647553996_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEt3JM092gkKCtSa0qQpjadc8-OxEXSqnhzz47ERdKqeD-s0TGrR0GhgATbXuX5LvuaFslWnKY6vbFOpPTz8A46&_nc_ohc=FSuUdRMUlHwQ7kNvwHgKU5t&_nc_oc=Adl2Dw88FZHArk7Eya3y8gvVr0dp3Hv6mc6VclC2yTrztPgGgAHh1R33_mq8A592c7H0miys5JBdiDx2623JTCrD&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AGkPJty5Q_GM2N_Qu2Yz2duoAnban5RXnG5E4VaUxrp9w&oe=681FCE0C",
+        "https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/488532524_1399009634454856_3254566045160113807_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeE31Yx9-AC62tTheOKSvYqoQXT1PoGj1-xBdPU-gaPX7J9aETbf9ON3Tqfrsl_66LMwpIObHGrFFtWQU4_Lib9G&_nc_ohc=kePc0H-oYTEQ7kNvwHiYMOF&_nc_oc=AdmpoAhmTyuKbtrFxHM6I4qsM-6_6JHyk90PMXhh1RW-xXQpnbes6lX28ON8f01LEiTWTU9VnjzUuLnZbf4pK7hl&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2AH0Ykmvqi5ontl6BiAhs3e8YTVddHlyW5Ha3-0LvH2TNA&oe=681FBE17",
+        "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/490190591_1019367916299516_123640643728237505_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEHMDKDPqNixAM57Qt-1C3iVLKhd2XH8vJUsqF3Zcfy8krPE9Cw7qipxZrrmJTQ87IQE1HhAsdVyfQmtiz4fHye&_nc_ohc=oPd5aCnXGQQQ7kNvwETZAe9&_nc_oc=AdmUzp25lrxE-RMNRya23jKp-9VV4UZ1kr3ceBstm1Nl4clqYeTlR3casGPmvXCwQad0F6WIhB021MgxZTJ7kfch&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2AGe4-atRGkmFArfizq05dArwmeuVq7oPmKGDCfN8vMk0w&oe=681FCA95",
+        "https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/490267216_1226202259107904_1677072771600441249_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeG-lVk8IjVWFvQBtewBYXI1QvqzzknrUdhC-rPOSetR2CMa419fJYlEWdvHfs3OLAbnX1-r9QC9VP4rLg2CUbv7&_nc_ohc=juLk84olpSAQ7kNvwE1f2IZ&_nc_oc=AdmB7UZhQn-hls7VKP20Kpg2b6uCMAURifoqE6Ki2v5Ri7IxHx49bMglC6v5gBCyEPyLvkx-3WByBbBX70OBwSMF&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AHi4jtDodzzIHcaBRTa0ntuIr4fUMNY6M6x7aO6HCtWmA&oe=681FBE57",
+      ];
 
 
 
@@ -383,109 +441,110 @@ onclick="toggleLoveLetter3()">Kwento ko lang</button>
       }
 
       // Quiz Game (Multi-question)
-const quizData = [
-    {
-      question: "Ano ang unang regalo na inigay ko sayo?",
-      options: ["Tulips lamp", "Portrait", "Rose"],
-      correctIndex: 0
-    },
-    {
-      question: "First conversation?",
-      options: ["AUG 5", "JUNE 11", "JULY 23"],
-      correctIndex: 2
-    },
-    {
-      question: "Sino madalas magselos?",
-      options: ["ako", "ikaw", "pareho"],
-      correctIndex: 2
-    }
-  ];
+      const quizData = [
+        {
+          question: "Ano ang unang regalo na inigay ko sayo?",
+          options: ["Tulips lamp", "Portrait", "Rose"],
+          correctIndex: 0
+        },
+        {
+          question: "First conversation?",
+          options: ["AUG 5", "JUNE 11", "JULY 23"],
+          correctIndex: 2
+        },
+        {
+          question: "Sino madalas magselos?",
+          options: ["ako", "ikaw", "pareho"],
+          correctIndex: 2
+        }
+      ];
 
-  let currentQuestion = 0;
+      let currentQuestion = 0;
 
-  function loadQuestion() {
-    const q = quizData[currentQuestion];
-    document.getElementById("quiz-question").textContent = q.question;
+      function loadQuestion() {
+        const q = quizData[currentQuestion];
+        document.getElementById("quiz-question").textContent = q.question;
 
-    const buttons = document.querySelectorAll("#quiz-options button");
-    buttons.forEach((btn, i) => {
-      btn.textContent = q.options[i];
-      btn.onclick = () => checkAnswer(i);
-    });
+        const buttons = document.querySelectorAll("#quiz-options button");
+        buttons.forEach((btn, i) => {
+          btn.textContent = q.options[i];
+          btn.onclick = () => checkAnswer(i);
+        });
 
-    document.getElementById("quiz-feedback").textContent = "";
-  }
-
-  function checkAnswer(index) {
-    const q = quizData[currentQuestion];
-    const feedback = document.getElementById("quiz-feedback");
-
-    if (index === q.correctIndex) {
-      feedback.textContent = "YAN! ngayon alam mo na 💖";
-      feedback.style.color = "#4CAF50";
-    } else {
-      feedback.textContent = "Ayy, di alam";
-      feedback.style.color = "#F44336";
-    }
-
-    setTimeout(() => {
-      currentQuestion = (currentQuestion + 1) % quizData.length;
-      loadQuestion();
-    }, 2000);
-  }
-
-  window.onload = loadQuestion;
-
-    const verses = [
-    "Philippians 4:13 – I can do all things through Christ who strengthens me.",
-    "Jeremiah 29:11 – 'For I know the plans I have for you,' declares the Lord...",
-    "1 Corinthians 13:4 – Love is patient, love is kind. It does not envy...",
-    "Psalm 23:1 – The Lord is my shepherd; I shall not want.",
-    "Romans 8:28 – And we know that in all things God works for the good...",
-    "Proverbs 3:5 – Trust in the Lord with all your heart...",
-    "Song of Solomon 3:4 – I have found the one whom my soul loves.",
-    "Isaiah 41:10 – Do not fear, for I am with you...",
-    "Matthew 28:20 – I am with you always, even to the end of the age.",
-    "Lamentations 3:22-23 – His mercies are new every morning.",
-    "John 3:16 – For God so loved the world that He gave His one and only Son...",
-    "Romans 5:8 – But God demonstrates His own love for us in this: While we were still sinners, Christ died for us.",
-    "Proverbs 31:25 – She is clothed with strength and dignity, and she laughs without fear of the future.",
-    "Psalm 46:1 – God is our refuge and strength, an ever-present help in trouble.",
-    "Ephesians 2:8-9 – For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God...",
-    "Isaiah 40:31 – But those who hope in the Lord will renew their strength...",
-    "Hebrews 13:5 – Never will I leave you; never will I forsake you.",
-    "Matthew 11:28 – Come to me, all you who are weary and burdened, and I will give you rest.",
-    "1 Peter 5:7 – Cast all your anxiety on Him because He cares for you.",
-    "Romans 15:13 – May the God of hope fill you with all joy and peace as you trust in Him...",
-    "Joshua 1:9 – Have I not commanded you? Be strong and courageous. Do not be afraid...",
-    "Psalm 34:8 – Taste and see that the Lord is good; blessed is the one who takes refuge in Him.",
-    "2 Corinthians 5:7 – For we live by faith, not by sight.",
-    "James 1:5 – If any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach...",
-    "Romans 12:12 – Be joyful in hope, patient in affliction, faithful in prayer.",
-    "2 Timothy 1:7 – For God gave us a spirit not of fear but of power and love and self-control.",
-    "Colossians 3:23 – Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
-    "Matthew 5:14 – You are the light of the world. A town built on a hill cannot be hidden.",
-    "Psalm 121:1-2 – I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
-    "Titus 3:5 – He saved us, not because of righteous things we had done, but because of His mercy.",
-    "Luke 1:37 – For no word from God will ever fail.",
-    "Deuteronomy 31:6 – Be strong and courageous. Do not be afraid or terrified because of them...",
-    "Matthew 6:33 – But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
-    "Romans 12:2 – Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
-    "Philippians 1:6 – Being confident of this, that He who began a good work in you will carry it on to completion until the day of Christ Jesus.",
-    "Psalm 119:105 – Your word is a lamp for my feet, a light on my path.",
-    "1 John 4:18 – There is no fear in love. But perfect love drives out fear...",
-  ];
-
-  const today = new Date();
-  const index = today.getDate() % verses.length;
-  const verseBox = document.getElementById("bible-verse");
-  verseBox.textContent = verses[index];
-
-      function toggleLoveLetter3() {
-    const letter = document.getElementById("loveLetter3");
-    letter.style.display = (letter.style.display === "block") ? "none" : "block";
+        document.getElementById("quiz-feedback").textContent = "";
       }
 
-</script>
-  </body>
+      function checkAnswer(index) {
+        const q = quizData[currentQuestion];
+        const feedback = document.getElementById("quiz-feedback");
+
+        if (index === q.correctIndex) {
+          feedback.textContent = "YAN! ngayon alam mo na 💖";
+          feedback.style.color = "#4CAF50";
+        } else {
+          feedback.textContent = "Ayy, di alam";
+          feedback.style.color = "#F44336";
+        }
+
+        setTimeout(() => {
+          currentQuestion = (currentQuestion + 1) % quizData.length;
+          loadQuestion();
+        }, 2000);
+      }
+
+      window.onload = loadQuestion;
+
+      const verses = [
+        "Philippians 4:13 – I can do all things through Christ who strengthens me.",
+        "Jeremiah 29:11 – 'For I know the plans I have for you,' declares the Lord...",
+        "1 Corinthians 13:4 – Love is patient, love is kind. It does not envy...",
+        "Psalm 23:1 – The Lord is my shepherd; I shall not want.",
+        "Romans 8:28 – And we know that in all things God works for the good...",
+        "Proverbs 3:5 – Trust in the Lord with all your heart...",
+        "Song of Solomon 3:4 – I have found the one whom my soul loves.",
+        "Isaiah 41:10 – Do not fear, for I am with you...",
+        "Matthew 28:20 – I am with you always, even to the end of the age.",
+        "Lamentations 3:22-23 – His mercies are new every morning.",
+        "John 3:16 – For God so loved the world that He gave His one and only Son...",
+        "Romans 5:8 – But God demonstrates His own love for us in this: While we were still sinners, Christ died for us.",
+        "Proverbs 31:25 – She is clothed with strength and dignity, and she laughs without fear of the future.",
+        "Psalm 46:1 – God is our refuge and strength, an ever-present help in trouble.",
+        "Ephesians 2:8-9 – For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God...",
+        "Isaiah 40:31 – But those who hope in the Lord will renew their strength...",
+        "Hebrews 13:5 – Never will I leave you; never will I forsake you.",
+        "Matthew 11:28 – Come to me, all you who are weary and burdened, and I will give you rest.",
+        "1 Peter 5:7 – Cast all your anxiety on Him because He cares for you.",
+        "Romans 15:13 – May the God of hope fill you with all joy and peace as you trust in Him...",
+        "Joshua 1:9 – Have I not commanded you? Be strong and courageous. Do not be afraid...",
+        "Psalm 34:8 – Taste and see that the Lord is good; blessed is the one who takes refuge in Him.",
+        "2 Corinthians 5:7 – For we live by faith, not by sight.",
+        "James 1:5 – If any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach...",
+        "Romans 12:12 – Be joyful in hope, patient in affliction, faithful in prayer.",
+        "2 Timothy 1:7 – For God gave us a spirit not of fear but of power and love and self-control.",
+        "Colossians 3:23 – Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+        "Matthew 5:14 – You are the light of the world. A town built on a hill cannot be hidden.",
+        "Psalm 121:1-2 – I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
+        "Titus 3:5 – He saved us, not because of righteous things we had done, but because of His mercy.",
+        "Luke 1:37 – For no word from God will ever fail.",
+        "Deuteronomy 31:6 – Be strong and courageous. Do not be afraid or terrified because of them...",
+        "Matthew 6:33 – But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
+        "Romans 12:2 – Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
+        "Philippians 1:6 – Being confident of this, that He who began a good work in you will carry it on to completion until the day of Christ Jesus.",
+        "Psalm 119:105 – Your word is a lamp for my feet, a light on my path.",
+        "1 John 4:18 – There is no fear in love. But perfect love drives out fear...",
+      ];
+
+      const today = new Date();
+      const index = today.getDate() % verses.length;
+      const verseBox = document.getElementById("bible-verse");
+      verseBox.textContent = verses[index];
+
+      function toggleLoveLetter3() {
+        const letter = document.getElementById("loveLetter3");
+        letter.style.display = (letter.style.display === "block") ? "none" : "block";
+      }
+
+    </script>
+</body>
+
 </html>
