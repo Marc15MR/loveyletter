@@ -223,10 +223,203 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
+
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: -280px;
+                width: 280px;
+                height: 100%;
+                background-color: #b390f8;
+                box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+
+            #sidebar.open {
+                left: 0;
+            }
+
+            #sidebar #toggleBtn {
+                position: absolute;
+                top: 50%;
+                right: -20px;
+                transform: translateY(-50%);
+                background-color: #a476ff;
+                color: white;
+                padding: 5px;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            #sidebar .content {
+                padding: 20px;
+                font-family: "Cursive", sans-serif;
+            }
+
+            .sidebar-img {
+                width: 100%;
+                max-height: 180px;
+                object-fit: cover;
+                border-radius: 12px;
+                margin-bottom: 15px;
+            }
+
+            .flip-card {
+                background-color: transparent;
+                width: 100%;
+                height: 200px;
+                perspective: 1000px;
+                margin-bottom: 20px;
+            }
+
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+            }
+
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+
+            .flip-card-front,
+            .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .flip-card-front img,
+            .flip-card-back img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .flip-card-back {
+                transform: rotateY(180deg);
+            }
+
+            .toggle-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .toggle-buttons button {
+                padding: 8px 12px;
+                border: none;
+                background-color: #f48fb1;
+                color: white;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.3s ease;
+            }
+
+            .toggle-buttons button:hover {
+                background-color: #ec407a;
+            }
+
+            .section-content {
+                padding: 10px;
+            }
+
+            .section h2 {
+                margin-bottom: 6px;
+                color: #fff;
+            }
+
+            .section p {
+                color: #e0f7fa;
+                font-size: 2em;
+
+            }
+
+            .toggle-btn {
+                width: 100%;
+                background-color: #a476ff;
+                border: none;
+                padding: 12px;
+                margin-top: 10px;
+                border-radius: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                font-family: 'Segoe UI', sans-serif;
+                transition: background-color 0.3s ease;
+            }
+
+            .toggle-btn:hover {
+                background-color: #fbc4d9;
+            }
+
+            .toggle-section {
+                display: none;
+                padding: 20px;
+                background-color: #fff5f8;
+                border-radius: 12px;
+                margin-top: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                font-family: 'Cursive', 'Segoe UI', sans-serif;
+                line-height: 1.6;
+                color: #333;
+                font-weight: bold;
+            }
     </style>
 </head>
 
 <body>
+
+    <div id="sidebar">
+        <div id="toggleBtn">&#x25B6;</div>
+
+        <div class="content">
+            <!-- Flip Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/494686428_556141327218005_2343863334425072478_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=fBVW-Skz2o4Q7kNvwEMfdn1&_nc_oc=AdmhTFOZ_1lNMZReWdi8cPyfaLxVeLJ3WxStlrTfhWLCi-XNtZhZ_OQOaomUbtoijxFJI_CDG7C97YIExflRxDYE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2QGADdRR4j0RoUf3NCR3stFMi_rSts0xawkbxPk1gpvRWQ&oe=68470AC2"
+                            alt="Front" />
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/494690555_2541526772874963_2227578047189746984_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=f9Hqg-poDjUQ7kNvwGE6AYB&_nc_oc=Adm1kDngy4nn-UWjTZeY_8D4FwYXwKE_05tN_t9ZUrw9mhK_mfZ1s4QbidvIyzUXnogqu7KtDG9PYEOEtEwMI-Bf&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2QEC8vGRNVAKFhdkhoONlAF9dlZ3vgywTIyPKxmo0ae-qA&oe=68472274"
+                            alt="Back" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toggle Buttons -->
+            <button onclick="toggleSection('letter')" class="toggle-btn">RANDOM</button>
+            <div id="letter" class="toggle-section">
+                <p>
+                    Hi babi
+                    <br><br>
+                    UPCOMING
+                    <br><br>
+                    -
+                    <br>
+                    — babi
+                </p>
+            </div>
+
+            <button onclick="toggleSection('question')" class="toggle-btn">❓Question</button>
+            <div id="question" class="toggle-section">
+                <p>
+                    UPCOMING
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="content">
@@ -245,7 +438,7 @@
     <section class="love-letter" id="loveLetter">
         <h2>Hi lovey</h2>
         <p>gusto ko lang sana sabihin na happy happy valentines sayo. di ko alam kung gaano ako kaswerte na nakilala
-            kita at
+            kita atle
             sa paano mo ko minahal at tinrato ng tama.every moment na kasama kita, sa bawat oras na nakakausap kita,
             pakiramdam ko buong buo na ang araw ko, ang mga bawat yakap at i love you mo na nagiging pahinga ko, at sa
             paano
@@ -599,6 +792,27 @@
                 letter.style.display = (letter.style.display === "block") ? "none" : "block";
             }
 
+
+
+
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggleBtn');
+
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                toggleBtn.innerHTML = sidebar.classList.contains('open') ? '&#x25C0;' : '&#x25B6;';
+                // Changes arrow direction (◀ or ▶)
+            });
+
+
+
+
+            function toggleSection(id) {
+                const sections = document.querySelectorAll('.toggle-section');
+                sections.forEach(section => {
+                    section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
+                });
+            }
 
 
         </script>
