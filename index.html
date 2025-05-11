@@ -409,6 +409,129 @@
             color: #0C7075;
             font-weight: bold;
         }
+
+        .hug-container {
+            text-align: center;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        #hugBtn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffb6c1;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s;
+        }
+
+        #hugBtn:hover {
+            transform: scale(1.05);
+            background-color: #ff8fa3;
+        }
+
+        #hugMessage {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #d94f6d;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #hugAnimation {
+            position: relative;
+            width: 100%;
+            height: 0;
+            overflow: visible;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            font-size: 24px;
+            color: #ff69b4;
+            animation: floatUp 1.5s ease-out forwards;
+            opacity: 0.9;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateX(-50%) translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(-100px) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        .hug-gif {
+            text-align: center;
+            margin-top: 10px;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        .hug-gif img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            10% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            90% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hug-gif {
+            text-align: center;
+            margin-top: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .hug-gif.hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -440,7 +563,7 @@
                     <br><br>
                     UPCOMING
                     <br><br>
-                    -I LOVE YOU SO MUCH
+                    -I LOVE YOU SO MUCH BABI
                     <br>
                     — babi
                 </p>
@@ -458,6 +581,15 @@
             <h3>A SUPRISE</h3>
             <p id="countdownTimer"></p>
         </div>
+        <div class="hug-container">
+            <button id="hugBtn">Send a Virtual Hug 🤗</button>
+            <div id="hugGif" class="hug-gif hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAZoEMJs2Bi6cf0_5OwBqByPzC6I3MnPhafs7xmzXUOxnj7dS4f85MlflZ51RSuhcnTI&usqp=CAU"
+                    alt="Virtual Hug" />
+            </div>
+        </div>
+
+
 
     </div>
     </div>
@@ -590,7 +722,7 @@
         <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
         <div style="position: relative; max-width: 600px; margin: 0 auto;">
             <img id="gallery-img"
-                src="https://scontent.fmnl8-4.fna.fbcdn.net/v/t1.15752-9/495075131_1407233193898247_8939850568765616781_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OcuvTa4bfXkQ7kNvwGZtJwe&_nc_oc=AdmLy3j4-LRU4m5YnownSEfyCHZPDFF05UiIwx7614XnvpynPWhZpeRRxzk4c_66kZs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&oh=03_Q7cD2QEeGn4yA2fGlV892MrLjF1zwuOfhTUfRjJGzQ51SoXCFA&oe=68480496"
+                src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t1.15752-9/494822003_1743455672912958_518937168359711713_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=iKmKeA2IqhkQ7kNvwEpFcvz&_nc_oc=Adkcs4W45CXyHjdhjqdwb1Ei9EQxE0H3Tyuauia0XzVyHnCilRl90jVP8lnVEvDZIhE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&oh=03_Q7cD2QGpvKQdLBwV55vJrFwmJQ_XzGh5L7Ht48tnGtE5KN7k9g&oe=6847E14D"
                 style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
 
             <!-- Navigation buttons -->
@@ -887,6 +1019,23 @@
                     document.getElementById("countdown").innerHTML = "It's today!";
                 }
             }, 1000);
+
+            const hugBtn = document.getElementById('hugBtn');
+            const hugGifContainer = document.getElementById('hugGif');
+            const hugImg = hugGifContainer.querySelector('img');
+
+            hugBtn.addEventListener('click', () => {
+                // Reset GIF by changing src
+                const src = hugImg.src;
+                hugImg.src = ''; // clear first
+                hugImg.src = src; // reset to same source
+
+                // Show and then hide the GIF
+                hugGifContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    hugGifContainer.classList.add('hidden');
+                }, 3000); // 5 seconds
+            });
 
 
 
