@@ -373,6 +373,42 @@
                 color: #333;
                 font-weight: bold;
             }
+
+            .love-note,
+            .countdown,
+            .photo-strip {
+                margin-bottom: 25px;
+            }
+
+        }
+
+        .countdown {
+            padding: 10px 12px;
+            background-color: #eef6fa;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            box-sizing: border-box;
+            margin: 0 auto 10px auto;
+            /* centers it horizontally and adds bottom margin */
+        }
+
+
+        #countdownTimer {
+            font-weight: bold;
+            color: #0a4f70;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .countdown h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            text-align: center;
+            font-size: 18px;
+            color: #0C7075;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -404,7 +440,7 @@
                     <br><br>
                     UPCOMING
                     <br><br>
-                    -
+                    -I LOVE YOU SO MUCH
                     <br>
                     — babi
                 </p>
@@ -417,6 +453,12 @@
                 </p>
             </div>
         </div>
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            <h3>A SUPRISE</h3>
+            <p id="countdownTimer"></p>
+        </div>
+
     </div>
     </div>
 
@@ -548,7 +590,7 @@
         <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
         <div style="position: relative; max-width: 600px; margin: 0 auto;">
             <img id="gallery-img"
-                src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/482886877_1237407061151420_4020204477210282448_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH8JEkhhW-H8fsGekgBvEs2YWa-MMINn0hhZr4wwg2fSAx4tWZBsMFyKoSpkESwxJwTPc10WmKltB04eUh7gdqB&_nc_ohc=hqR026ndE5QQ7kNvwHmTFF_&_nc_oc=AdmDW_hBoOcHrV1gZK1EJn4s1U9tzSaVvbp7HmO-jGKvZTzRAdUkwYnN1SS0UtuKWkkm9D4Ve1Ff6vL3pPcw8rb3&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AFTJz_TddO39iiiLEuna5upg89aL1WwAEZmUdYW4T7Ezg&oe=681FD94D"
+                src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t1.15752-9/494822003_1743455672912958_518937168359711713_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=iKmKeA2IqhkQ7kNvwEpFcvz&_nc_oc=Adkcs4W45CXyHjdhjqdwb1Ei9EQxE0H3Tyuauia0XzVyHnCilRl90jVP8lnVEvDZIhE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&oh=03_Q7cD2QGpvKQdLBwV55vJrFwmJQ_XzGh5L7Ht48tnGtE5KN7k9g&oe=6847E14D"
                 style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
 
             <!-- Navigation buttons -->
@@ -636,13 +678,13 @@
 
             // Gallery Slideshow
             const images = [
-                "https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/488604257_2974803196026043_8499903081581162923_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHfxUIxdEXhlKCOenZjF-nzUY21FuLb9KJRjbUW4tv0oi9oNBweits9Z0ra9VLYpVKB5H3cyhNI0D1c0_RkKF0P&_nc_ohc=vWmxUaqAChQQ7kNvwHFaWLh&_nc_oc=Adn8myBDJmar7fbjRym3cRPL0WirADpbr2i3l8gslZS8Xffbz0HIOBfRwPAAPrZsp8BAjkKwebQjmYhWT2yyOEMP&_nc_zt=23&_nc_ht=scontent.fmnl4-3.fna&oh=03_Q7cD2AF2pBHSMbOsQdRIMwZCi9vRlxnopfRWCJZmqL7JLN6CQw&oe=681FB594",
-                "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/488770809_1825188705543658_5438933372127191020_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGLv-5tEo3DTi8lw3V2jnpEFLRBWjrj-IsUtEFaOuP4i8IjCzB62BkI90nriuGwlV8UAG7QTDA-lB7AJbTF2BF2&_nc_ohc=B4P-3mJ0iCcQ7kNvwF2Wv-K&_nc_oc=AdkJ8xO2CELgG8DfGpgLLI0ftIrwdOVvyq1IZaBvQkwqa1478EWpwwnsGJ0kfncs4iLOejqwF4yYp4qqiBS8CDa9&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2AHnH9LYLiw-elMU-hvj2XrY6hBVyFYFdwgsQWQcxkjFMA&oe=681FDEA1",
-                "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/488790759_1581576425857576_8610112663295236217_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGZQw3OcxeKi2MMcc9MCDxLwnoQpO9pLK7CehCk72ksrsnmYn_hxCQ9ChDRZPOepJRqRZ6HjzaiCEs_fMoSmvoF&_nc_ohc=HdCIKs5xge8Q7kNvwElkFI9&_nc_oc=AdkG_fh7aNotLtfgT8Idv88nop-Vk8f-fS-kK3hSOqig3aw1jxj6O6re3Z5AXqG-gbciTBAR4NOOL5dHm83Ie35D&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AHcHUOQlWUR-U7a4vRGL6q_Hq51wn3mwPqTZNxGOahWSA&oe=681FB8D4",
-                "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/488791425_1314933513072369_265696250647553996_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEt3JM092gkKCtSa0qQpjadc8-OxEXSqnhzz47ERdKqeD-s0TGrR0GhgATbXuX5LvuaFslWnKY6vbFOpPTz8A46&_nc_ohc=FSuUdRMUlHwQ7kNvwHgKU5t&_nc_oc=Adl2Dw88FZHArk7Eya3y8gvVr0dp3Hv6mc6VclC2yTrztPgGgAHh1R33_mq8A592c7H0miys5JBdiDx2623JTCrD&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2AGkPJty5Q_GM2N_Qu2Yz2duoAnban5RXnG5E4VaUxrp9w&oe=681FCE0C",
-                "https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/488532524_1399009634454856_3254566045160113807_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeE31Yx9-AC62tTheOKSvYqoQXT1PoGj1-xBdPU-gaPX7J9aETbf9ON3Tqfrsl_66LMwpIObHGrFFtWQU4_Lib9G&_nc_ohc=kePc0H-oYTEQ7kNvwHiYMOF&_nc_oc=AdmpoAhmTyuKbtrFxHM6I4qsM-6_6JHyk90PMXhh1RW-xXQpnbes6lX28ON8f01LEiTWTU9VnjzUuLnZbf4pK7hl&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2AH0Ykmvqi5ontl6BiAhs3e8YTVddHlyW5Ha3-0LvH2TNA&oe=681FBE17",
-                "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/490190591_1019367916299516_123640643728237505_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEHMDKDPqNixAM57Qt-1C3iVLKhd2XH8vJUsqF3Zcfy8krPE9Cw7qipxZrrmJTQ87IQE1HhAsdVyfQmtiz4fHye&_nc_ohc=oPd5aCnXGQQQ7kNvwETZAe9&_nc_oc=AdmUzp25lrxE-RMNRya23jKp-9VV4UZ1kr3ceBstm1Nl4clqYeTlR3casGPmvXCwQad0F6WIhB021MgxZTJ7kfch&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2AGe4-atRGkmFArfizq05dArwmeuVq7oPmKGDCfN8vMk0w&oe=681FCA95",
-                "https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/490267216_1226202259107904_1677072771600441249_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeG-lVk8IjVWFvQBtewBYXI1QvqzzknrUdhC-rPOSetR2CMa419fJYlEWdvHfs3OLAbnX1-r9QC9VP4rLg2CUbv7&_nc_ohc=juLk84olpSAQ7kNvwE1f2IZ&_nc_oc=AdmB7UZhQn-hls7VKP20Kpg2b6uCMAURifoqE6Ki2v5Ri7IxHx49bMglC6v5gBCyEPyLvkx-3WByBbBX70OBwSMF&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD2AHi4jtDodzzIHcaBRTa0ntuIr4fUMNY6M6x7aO6HCtWmA&oe=681FBE57",
+                "https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/495074567_1066892258830875_524814536205735941_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=dnXXSFjjiCkQ7kNvwFZA_sR&_nc_oc=AdlFqamkZ4Z2uUZDtnqsTdwS6FzoI21ninbQvXKncMwpsXnQB9CS9oNaGVN1_GhwZfET9RGwP8lKXfnqkqBgCpMa&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2QFKD6Jx71NpRyfG8tQM_2qg-1CZ4L3a0kP-Aino6FM3tA&oe=6847BB36",
+                "https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/495071544_1393716065157719_850794060743326470_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=k1ZITphnq_0Q7kNvwHTIXh1&_nc_oc=AdmCebopLjtDRSrU7vX3zgb3Xjlb2lmTRdqxvoFI9t48may2RFskPQBfwxN_N0hBh7hLXyl4WLz7Yo-p1LMTzjA_&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD2QG0Fr891gKN6nvIPRifL-JEDESc7RQDKraR6nqEooJkDw&oe=6847D297",
+                "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/495072324_1903097520506267_5018886170243935658_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=sP4REpFZS1YQ7kNvwHVipEb&_nc_oc=AdlvXYlYLpW-uJEZJfr_U-GSlQ476V7mG8DvCceAtJXhX9yPXTqJXuCvOFDqp-GQo4nj7dIW3WFrdk_UBgBXGiyq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2QG71UWpkvHBUC7mRJ9YsbmBMQKmrDNSQ2dcQoFAhzgxqg&oe=6847D5A8",
+                "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/495072661_1189803365787923_7075353791572206383_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=FqcfyJhNDu8Q7kNvwH8dqnR&_nc_oc=AdmCxTrD6ysnSpQuvcbpi1oZJ2IwBW3PW_HwSnf3oXFbeFoG7ypaqKdg7efJNvqtK_abgU8ddjJP-0w3Hd_yDT0r&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2QE8BpCbSRzIXdnO4htogOEzc3EEdZr9Vf3RuQazKZ_X2Q&oe=6847B5E0",
+                "https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/495074594_682788704386192_9035848786602986038_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4RB9wrjy4b4Q7kNvwHIsgK1&_nc_oc=AdmgD9boADSPk80h22_VwJVJbODrlytLc4Enaq03eLuonnHl-skn4RjgHS-YTWJ1-hcIM4WFeXGHcQ4WhCRI0P42&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD2QH4koaKaL5JNJdhhD4bkN5U09qYtCimbXT2ZL8d9cAj8g&oe=6847DF7A",
+                "https://scontent.fmnl8-5.fna.fbcdn.net/v/t1.15752-9/488604257_2974803196026043_8499903081581162923_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=llmANmab5x0Q7kNvwHiRNiu&_nc_oc=Adm7-6NjCI93YksqgZ91oOY6qmnkefjIW6o-5LHpoh4SY5MTVRoK37tBuj1LXc_8kCs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&oh=03_Q7cD2QG3oST2eYwLtKu0Gis3Hv4dZaBrUAM3ZCI3O6bzBr8JGg&oe=6847EB54",
+                "https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/490267216_1226202259107904_1677072771600441249_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=tQGm0rPW1N8Q7kNvwFxmJcd&_nc_oc=AdmoE0j-QSleuMGbNuNyCfA0u47wpH45pSogeDlKUS6PwSFw5kxqaELEwrnXfkhKkvE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&oh=03_Q7cD2QHTVcuowSakD-V0WrhZIBji6CRskOK9igNDEHQ34Q_4rw&oe=6847F417",
             ];
 
 
@@ -813,6 +855,40 @@
                     section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
                 });
             }
+
+
+
+            // Countdown target date - set to July 23, 2025
+            const countdownDate = new Date("July 23, 2025 00:00:00").getTime();
+
+            const countdownFunc = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdownTimer").innerHTML =
+                    days +
+                    "d " +
+                    hours +
+                    "h " +
+                    minutes +
+                    "m " +
+                    seconds +
+                    "s ";
+
+                if (distance < 0) {
+                    clearInterval(countdownFunc);
+                    document.getElementById("countdown").innerHTML = "It's today!";
+                }
+            }, 1000);
+
+
 
 
         </script>
