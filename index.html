@@ -710,19 +710,37 @@
         }
 
         .volume-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin-top: 10px;
-    color: #fff;
-}
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10px;
+            color: #fff;
+        }
 
-.volume-control i {
-    font-size: 16px;
-    color: white;
-}
+        .volume-control i {
+            font-size: 16px;
+            color: white;
+        }
 
+        .song-select {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #9b30ff;
+            color: rgb(156, 32, 156);
+            font-family: 'Segoe UI', sans-serif;
+            outline: none;
+            appearance: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .song-select:hover {
+            background: #945cb4;
+        }
     </style>
 </head>
 
@@ -799,6 +817,11 @@
                     <p id="song-artist">bread</p>
                 </div>
 
+                <select id="song-select" onchange="selectSong()" class="song-select">
+                    <option disabled selected>Choose a song</option>
+                </select>
+
+
                 <audio id="audio" src="SONGS/If.mp3"></audio>
 
                 <div class="controls">
@@ -807,10 +830,10 @@
                     <button onclick="nextSong()"><i class="fas fa-forward"></i></button>
                 </div>
 
-               <div class="volume-control">
-    <i class="fas fa-volume-up"></i>
-    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
-</div>
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+                </div>
 
             </div>
         </div>
@@ -1339,6 +1362,23 @@
             audio.volume = volumeSlider.value;
             updateVolumeBar();
 
+            const selectElement = document.getElementById('song-select');
+
+            songs.forEach((song, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${song.title} - ${song.artist}`;
+                selectElement.appendChild(option);
+            });
+
+            function selectSong() {
+                const selectedIndex = selectElement.value;
+                currentSongIndex = parseInt(selectedIndex);
+                loadSong(currentSongIndex);
+                playSong();
+            }
+
+            
 
         </script>
 </body>
