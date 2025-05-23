@@ -766,23 +766,6 @@
                     — Raymarc
                 </p>
             </div>
-
-            <button onclick="toggleSection('question')" class="toggle-btn">Question❓</button>
-            <div id="question" class="toggle-section">
-                <p>
-                    Hi babi,
-                    tanong ko lang, actually matagal ko na gusto itanong to sayo, last year pa ata pero di ko muna
-                    tinuloy itanong sayo. yk baka maging bad timing e. naalala ko lang ulit to tanong ko habang nasa
-                    cool off tayo wala ako magawa, di kita makausap. so tiningnan ko isa mo acc, kaya naalala ko ulit
-                    tanong ko. nangangamba ako itanong to sayo baka kasi ito maging cause ng argue or what. pero much
-                    better na itanong ko nalang kesa di ko itanong hanggang sa masira peace of mind ko sa kakaisip at
-                    malinawan na din. yan din yung dahilan bat ko itatanong to sayo. uhmm bat nakafollow ka pa rin kay
-                    Ivan? yk it's been a 6 months since sinabi mo sakin closure nyo. curious lang ako, tagal na din kasi
-                    and you still follow him sa isa mo socmed. and yah yan lang, wala nmn ako ibang tanong. unahan na
-                    kita, wala ako sinasabi iunfollow mo or what. iintindihin ko sagot mo and valid nmn siguro since
-                    kilala sya ng fam mo. yun lang.
-                </p>
-            </div>
         </div>
         <!-- Countdown Timer -->
         <div class="countdown">
@@ -850,6 +833,7 @@
                 <button onclick="toggleLoveLetter()">My Valentines Letter</button>
                 <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
                 <button onclick="toggleLoveLetter3()">Kwento ko lang</button>
+                <button onclick="toggleLoveLetter4()">Reply ko</button>
                 <button onclick="openPopup()">Remember:</button>
             </div>
         </div>
@@ -950,6 +934,48 @@
         <p>Raymarc</p>
     </section>
 
+    <section class="love-letter" id="loveLetter4">
+        <h2>Hi babi</h2>
+        <p>well, ayoko. ayoko sumuko dahil lang dyan. naiintindihan po kita bat ka ganyan right now but hindi enough
+            yung
+            rason na yon para sumuko ako sayo. I already promise to myself na hindi ako susuko sayo kaya, whatever the
+            situation is hindi ako susuko or aalis sa tabi mo. saka na ko susuko pag alam ko last breath ko na. kilala
+            ko kasi
+            sarili ko na kapag sumuko ako, talo ako. kaya kahit alam ko mahirap di ako susuko. madaming rason para di
+            ako
+            sumuko, madami din pwede maging rason para sumuko ako. pero kung para sa taong mahal ko never ako susuko.
+            yung
+            ring, you already know bat ko binigay yan my promise ako dyan, right? my isang promise dyan na hangga't
+            buhay pa
+            ko hindi ako susuko, hangga't buhay pa ko nasa tabi mo lang ako at kasama mo ko. madami ako pinangako sa
+            ring na
+            yan, bukod pa don bago ko ibigay sayo yan pinagpray ko muna yan, para guided ka pa rin ni God. you
+            everything I
+            wanted, ikaw yung taong gusto ko pakasalan isang araw. kaya wag mo po isipin na susuko ako sayo basta basta
+            dahil
+            sa nangyayari, kase hindi mangyayari yan. madami pa rason bat hindi ako sumusuko sayo. hayaan mo muna ako
+            suportahan kita sa lahat at unti unti tuparin mga pangarap mo. wag mo muna din ako alalahanin if okay lang
+            ako or
+            what, okay na okay lang ako kailangan ko lang magpagaling sa mga sakit at injury na nakuha ko. wag ka din po
+            magalala alam ko po prarority mo kaya wag mo po muna isipin yon relasyon, hayaan mo po muna suportahan kita
+            at
+            hintayin ka hanggang sa maging handa kana kahit alam ko matagal pa bago mangyari yon. I hope okay ka lang,
+            kahit
+            alam ko may mga pinagdadaanan ka problema. and nga pala okay lang sakin na nagbreak ka muna sa lahat
+            naiintindihan
+            ko nmn pinagdaanan mo ipagprapray kita. also alam ko di okay sayo na may iba ako magustuhan hahaha kilala po
+            kita,
+            at never ko gagawin yan/mangyayari yan.and nga din pala bakit nursing na kukunin mo? niways alagaan mo po
+            sarili mo, kumain ka lagi kahit alam ko madalas ka mawalan
+            ng gana. wag mo din kakalimutan magpray lagi.
+        </p>
+        <p>if ever gusto mo maramdaman presence ko pero ayaw mo magchat hawakan
+            mo lang yung ring na binigay ko sayo. lagi mo tandaan nasa tabi mo lang ako, hindi ako susuko sayo at
+            makakapaghintay ako. </p>
+        <p>I love you, forever and always. babalik ako dito nextweek </p>
+        <p>Raymarc</p>
+    </section>
+
     <!-- Popup Modal -->
     <section class="popup" id="popup">
         <h2>1 PETER 5:10</h2>
@@ -1002,7 +1028,7 @@
                 lang
                 isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey
                 mo,
-                sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. I hope pagkatapos ng bakasyon na'to nasa iyo
+                sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. hindi ako susuko. I hope pagkatapos ng bakasyon na'to nasa iyo
                 pa rin
                 yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is
                 on the
@@ -1213,7 +1239,10 @@
                 letter.style.display = (letter.style.display === "block") ? "none" : "block";
             }
 
-
+            function toggleLoveLetter4() {
+                const letter = document.getElementById("loveLetter4");
+                letter.style.display = (letter.style.display === "block") ? "none" : "block";
+            }
 
 
             const sidebar = document.getElementById('sidebar');
@@ -1378,7 +1407,7 @@
                 playSong();
             }
 
-            
+
 
         </script>
 </body>
