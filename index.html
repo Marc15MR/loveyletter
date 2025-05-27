@@ -835,6 +835,7 @@
                 <button onclick="toggleLoveLetter2()">My Moving up Letter</button>
                 <button onclick="toggleLoveLetter3()">Kwento ko lang</button>
                 <button onclick="toggleLoveLetter4()">Reply ko</button>
+                <button onclick="toggleLoveLetter5()">Random lang</button>
                 <button onclick="openPopup()">Remember:</button>
             </div>
         </div>
@@ -977,441 +978,467 @@
         <p>Raymarc</p>
     </section>
 
-    <!-- Popup Modal -->
-    <section class="popup" id="popup">
-        <h2>1 PETER 5:10</h2>
-        <p>And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little
-            while,
-            will himself restore you and make you strong, firm and steadfast</p>
-        <button onclick="closePopup()">Close</button>
+    <section class="love-letter" id="loveLetter5">
+        <h2>uhmm Hi</h2>
+        <p> its been two weks na di tayo nakakapag usap ng maayos and sorry kung ngayon lang ako nakapag update dito,
+            ngayon lang naging medyo okay yung pakiramdam ko. pero mukhang
+            di ata dahil sa nakita ko hahah. anyways musta kana, i hope okay ka lang at happy ka. alagaan mo sarili mo ,
+            kumain ka
+            din lagi. iwas iwasan din yung pag pupupyat baka magaya ka sakin, 2 week na nilalagnat dahil sa laging
+            puyat. magpray din lagi. </p>
+        <p> madami pa sana ako gusto sabihin at ikwento kaso mukhang di ko matutuloy. di ko alam kung makakabalik
+            agad ako dito next week, but i hope. tatapusin ko na din yung contarct sa working ko. pero araw araw pa din
+            ako mag pupuyat may dalawang upcoming project kase ako irreleast and isa ka don abangan mo nalang </p>
+        <p>and yah mukhang hanggang dito muna. see you sa june and don't worry okay pa din tayo.</p>
+        <p>I love you. see you in my dream.....</p>
+        <p>-Raymarc</p>
     </section>
 
-    <div class="bible-verse-box">
-        <h3>📖 Daily Bible Verse </h3>
-        <p id="bible-verse">Loading...</p>
-    </div>
+        <!-- Popup Modal -->
+        <section class="popup" id="popup">
+            <h2>1 PETER 5:10</h2>
+            <p>And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little
+                while,
+                will himself restore you and make you strong, firm and steadfast</p>
+            <button onclick="closePopup()">Close</button>
+        </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
-        <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
-        <div style="position: relative; max-width: 600px; margin: 0 auto;">
-            <img id="gallery-img"
-                src="https://scontent.fmnl8-4.fna.fbcdn.net/v/t1.15752-9/495075131_1407233193898247_8939850568765616781_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OcuvTa4bfXkQ7kNvwGZtJwe&_nc_oc=AdmLy3j4-LRU4m5YnownSEfyCHZPDFF05UiIwx7614XnvpynPWhZpeRRxzk4c_66kZs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&oh=03_Q7cD2QEeGn4yA2fGlV892MrLjF1zwuOfhTUfRjJGzQ51SoXCFA&oe=68480496"
-                style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
-
-            <!-- Navigation buttons -->
-            <button onclick="prevImage()"
-                style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-                ❮
-            </button>
-            <button onclick="nextImage()"
-                style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-                ❯
-            </button>
-        </div>
-    </section>
-
-    <!-- Secret Message -->
-    <section style="text-align:center; padding:40px;">
-        <button onclick="document.getElementById('secret-modal').style.display='block'"
-            style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock My Message
-            🔐</button>
-        <div id="secret-modal"
-            style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
-            <input id="code-input" type="password" placeholder="Enter code"
-                style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
-            <br /><br />
-            <button onclick="checkCode()"
-                style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
-            <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti naopen
-                mo
-                remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay hindi
-                lang
-                isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa journey
-                mo,
-                sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. hindi ako susuko. I hope pagkatapos ng bakasyon na'to nasa iyo
-                pa rin
-                yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message is
-                on the
-                day God sent you into my life. I love you so much forever and always</p>
-        </div>
-    </section>
-
-    <!-- Memory Game / Quiz -->
-    <section style="text-align:center; padding:50px; background:#fff;">
-        <h2 style="color:#945cb4;">Do you remember it? 🧠💘</h2>
-        <p id="quiz-question">Ano ang unang regalo na inigay ko sayo?</p>
-        <div id="quiz-options" style="margin-top:20px;">
-            <button>Option 1</button>
-            <button>Option 2</button>
-            <button>Option 3</button>
-
-        </div>
-        <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
-
-        <!-- Message Form Section -->
-        <div class="message-form">
-            <h2>Send Me a Message</h2>
-            <<form id="messageForm" action="https://formspree.io/f/mrbqbbzd" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required />
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-                </form>
-                <p id="formFeedback" style="color: green; display: none;"></p>
+        <div class="bible-verse-box">
+            <h3>📖 Daily Bible Verse </h3>
+            <p id="bible-verse">Loading...</p>
         </div>
 
+        <!-- Gallery Section -->
+        <section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
+            <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
+            <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                <img id="gallery-img"
+                    src="https://scontent.fmnl8-4.fna.fbcdn.net/v/t1.15752-9/495075131_1407233193898247_8939850568765616781_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OcuvTa4bfXkQ7kNvwGZtJwe&_nc_oc=AdmLy3j4-LRU4m5YnownSEfyCHZPDFF05UiIwx7614XnvpynPWhZpeRRxzk4c_66kZs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&oh=03_Q7cD2QEeGn4yA2fGlV892MrLjF1zwuOfhTUfRjJGzQ51SoXCFA&oe=68480496"
+                    style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
 
-        <!-- JavaScript -->
-        <script>
-            // Love Letter Toggle
-            function toggleLoveLetter() {
-                const loveLetter = document.getElementById("loveLetter");
-                loveLetter.style.display = loveLetter.style.display === "block" ? "none" : "block";
-            }
-            function toggleLoveLetter2() {
-                const loveLetter2 = document.getElementById("loveLetter2");
-                loveLetter2.style.display = loveLetter2.style.display === "block" ? "none" : "block";
-            }
+                <!-- Navigation buttons -->
+                <button onclick="prevImage()"
+                    style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                    ❮
+                </button>
+                <button onclick="nextImage()"
+                    style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                    ❯
+                </button>
+            </div>
+        </section>
 
-            // Popup
-            function openPopup() {
-                document.getElementById("popup").style.display = "block";
-            }
-            function closePopup() {
-                document.getElementById("popup").style.display = "none";
-            }
+        <!-- Secret Message -->
+        <section style="text-align:center; padding:40px;">
+            <button onclick="document.getElementById('secret-modal').style.display='block'"
+                style="background-color:#ff66b2; color:white; border-radius:20px; padding:15px 30px;">Unlock My Message
+                🔐</button>
+            <div id="secret-modal"
+                style="display:none; background:#fff; padding:30px; border-radius:15px; width:80%; max-width:400px; margin:20px auto; box-shadow:0 5px 15px rgba(0,0,0,0.3); text-align:center;">
+                <input id="code-input" type="password" placeholder="Enter code"
+                    style="padding:10px; width:80%; border-radius:10px; border:1px solid #ccc;" />
+                <br /><br />
+                <button onclick="checkCode()"
+                    style="background:#a476ff; color:white; padding:10px 20px; border-radius:15px;">Submit</button>
+                <p id="secret-text" style="margin-top:20px; display:none; color:#3f3f3f;">💌 Hi lovey, HAHAHAHA buti
+                    naopen
+                    mo
+                    remember that code kase may kasunod pa to. gusto ko lang sabihin ang ring na ibinigay ko sayo ay
+                    hindi
+                    lang
+                    isang ring or ano, it's my promise na hihintayin kita hanggang sa pwede na, susuportahan kita sa
+                    journey
+                    mo,
+                    sasamahan kita sa pangarap mo, at hindi hindi kita iiwan. hindi ako susuko. I hope pagkatapos ng
+                    bakasyon na'to nasa iyo
+                    pa rin
+                    yan suot mo. God knows na handa ako na hintayin ka, alam nya rin hihindi kita iiwan. my next message
+                    is
+                    on the
+                    day God sent you into my life. I love you so much forever and always</p>
+            </div>
+        </section>
 
-            // Gallery Slideshow
-            const images = [
-                "https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/495074567_1066892258830875_524814536205735941_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=dnXXSFjjiCkQ7kNvwFZA_sR&_nc_oc=AdlFqamkZ4Z2uUZDtnqsTdwS6FzoI21ninbQvXKncMwpsXnQB9CS9oNaGVN1_GhwZfET9RGwP8lKXfnqkqBgCpMa&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2QFKD6Jx71NpRyfG8tQM_2qg-1CZ4L3a0kP-Aino6FM3tA&oe=6847BB36",
-                "https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/495071544_1393716065157719_850794060743326470_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=k1ZITphnq_0Q7kNvwHTIXh1&_nc_oc=AdmCebopLjtDRSrU7vX3zgb3Xjlb2lmTRdqxvoFI9t48may2RFskPQBfwxN_N0hBh7hLXyl4WLz7Yo-p1LMTzjA_&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD2QG0Fr891gKN6nvIPRifL-JEDESc7RQDKraR6nqEooJkDw&oe=6847D297",
-                "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/495072324_1903097520506267_5018886170243935658_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=sP4REpFZS1YQ7kNvwHVipEb&_nc_oc=AdlvXYlYLpW-uJEZJfr_U-GSlQ476V7mG8DvCceAtJXhX9yPXTqJXuCvOFDqp-GQo4nj7dIW3WFrdk_UBgBXGiyq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2QG71UWpkvHBUC7mRJ9YsbmBMQKmrDNSQ2dcQoFAhzgxqg&oe=6847D5A8",
-                "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/495072661_1189803365787923_7075353791572206383_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=FqcfyJhNDu8Q7kNvwH8dqnR&_nc_oc=AdmCxTrD6ysnSpQuvcbpi1oZJ2IwBW3PW_HwSnf3oXFbeFoG7ypaqKdg7efJNvqtK_abgU8ddjJP-0w3Hd_yDT0r&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2QE8BpCbSRzIXdnO4htogOEzc3EEdZr9Vf3RuQazKZ_X2Q&oe=6847B5E0",
-                "https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/495074594_682788704386192_9035848786602986038_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4RB9wrjy4b4Q7kNvwHIsgK1&_nc_oc=AdmgD9boADSPk80h22_VwJVJbODrlytLc4Enaq03eLuonnHl-skn4RjgHS-YTWJ1-hcIM4WFeXGHcQ4WhCRI0P42&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD2QH4koaKaL5JNJdhhD4bkN5U09qYtCimbXT2ZL8d9cAj8g&oe=6847DF7A",
-                "https://scontent.fmnl8-5.fna.fbcdn.net/v/t1.15752-9/488604257_2974803196026043_8499903081581162923_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=llmANmab5x0Q7kNvwHiRNiu&_nc_oc=Adm7-6NjCI93YksqgZ91oOY6qmnkefjIW6o-5LHpoh4SY5MTVRoK37tBuj1LXc_8kCs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&oh=03_Q7cD2QG3oST2eYwLtKu0Gis3Hv4dZaBrUAM3ZCI3O6bzBr8JGg&oe=6847EB54",
-                "https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/490267216_1226202259107904_1677072771600441249_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=tQGm0rPW1N8Q7kNvwFxmJcd&_nc_oc=AdmoE0j-QSleuMGbNuNyCfA0u47wpH45pSogeDlKUS6PwSFw5kxqaELEwrnXfkhKkvE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&oh=03_Q7cD2QHTVcuowSakD-V0WrhZIBji6CRskOK9igNDEHQ34Q_4rw&oe=6847F417",
-            ];
+        <!-- Memory Game / Quiz -->
+        <section style="text-align:center; padding:50px; background:#fff;">
+            <h2 style="color:#945cb4;">Do you remember it? 🧠💘</h2>
+            <p id="quiz-question">Ano ang unang regalo na inigay ko sayo?</p>
+            <div id="quiz-options" style="margin-top:20px;">
+                <button>Option 1</button>
+                <button>Option 2</button>
+                <button>Option 3</button>
+
+            </div>
+            <p id="quiz-feedback" style="margin-top:15px; font-weight:bold;"></p>
+
+            <!-- Message Form Section -->
+            <div class="message-form">
+                <h2>Send Me a Message</h2>
+                <<form id="messageForm" action="https://formspree.io/f/mrbqbbzd" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                    </form>
+                    <p id="formFeedback" style="color: green; display: none;"></p>
+            </div>
 
 
-
-            let currentImg = 0;
-            function showImage(index) {
-                document.getElementById("gallery-img").src = images[index];
-            }
-            function nextImage() {
-                currentImg = (currentImg + 1) % images.length;
-                showImage(currentImg);
-            }
-            function prevImage() {
-                currentImg = (currentImg - 1 + images.length) % images.length;
-                showImage(currentImg);
-            }
-
-            // Secret Code Message
-            function checkCode() {
-                const input = document.getElementById("code-input").value;
-                if (input === "072324") {
-                    document.getElementById("secret-text").style.display = "block";
-                } else {
-                    alert("Oops! Mali, Tanungin mo yung gumawa");
+            <!-- JavaScript -->
+            <script>
+                // Love Letter Toggle
+                function toggleLoveLetter() {
+                    const loveLetter = document.getElementById("loveLetter");
+                    loveLetter.style.display = loveLetter.style.display === "block" ? "none" : "block";
                 }
-            }
-
-            // Quiz Game (Multi-question)
-            const quizData = [
-                {
-                    question: "Ano ang unang regalo na inigay ko sayo?",
-                    options: ["Tulips lamp", "Portrait", "Rose"],
-                    correctIndex: 0
-                },
-                {
-                    question: "First conversation?",
-                    options: ["AUG 5", "JUNE 11", "JULY 23"],
-                    correctIndex: 2
-                },
-                {
-                    question: "Sino madalas magselos?",
-                    options: ["ako", "ikaw", "pareho"],
-                    correctIndex: 2
+                function toggleLoveLetter2() {
+                    const loveLetter2 = document.getElementById("loveLetter2");
+                    loveLetter2.style.display = loveLetter2.style.display === "block" ? "none" : "block";
                 }
-            ];
 
-            let currentQuestion = 0;
+                // Popup
+                function openPopup() {
+                    document.getElementById("popup").style.display = "block";
+                }
+                function closePopup() {
+                    document.getElementById("popup").style.display = "none";
+                }
 
-            function loadQuestion() {
-                const q = quizData[currentQuestion];
-                document.getElementById("quiz-question").textContent = q.question;
+                // Gallery Slideshow
+                const images = [
+                    "https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/495074567_1066892258830875_524814536205735941_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=dnXXSFjjiCkQ7kNvwFZA_sR&_nc_oc=AdlFqamkZ4Z2uUZDtnqsTdwS6FzoI21ninbQvXKncMwpsXnQB9CS9oNaGVN1_GhwZfET9RGwP8lKXfnqkqBgCpMa&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD2QFKD6Jx71NpRyfG8tQM_2qg-1CZ4L3a0kP-Aino6FM3tA&oe=6847BB36",
+                    "https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/495071544_1393716065157719_850794060743326470_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=k1ZITphnq_0Q7kNvwHTIXh1&_nc_oc=AdmCebopLjtDRSrU7vX3zgb3Xjlb2lmTRdqxvoFI9t48may2RFskPQBfwxN_N0hBh7hLXyl4WLz7Yo-p1LMTzjA_&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD2QG0Fr891gKN6nvIPRifL-JEDESc7RQDKraR6nqEooJkDw&oe=6847D297",
+                    "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/495072324_1903097520506267_5018886170243935658_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=sP4REpFZS1YQ7kNvwHVipEb&_nc_oc=AdlvXYlYLpW-uJEZJfr_U-GSlQ476V7mG8DvCceAtJXhX9yPXTqJXuCvOFDqp-GQo4nj7dIW3WFrdk_UBgBXGiyq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD2QG71UWpkvHBUC7mRJ9YsbmBMQKmrDNSQ2dcQoFAhzgxqg&oe=6847D5A8",
+                    "https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/495072661_1189803365787923_7075353791572206383_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=FqcfyJhNDu8Q7kNvwH8dqnR&_nc_oc=AdmCxTrD6ysnSpQuvcbpi1oZJ2IwBW3PW_HwSnf3oXFbeFoG7ypaqKdg7efJNvqtK_abgU8ddjJP-0w3Hd_yDT0r&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD2QE8BpCbSRzIXdnO4htogOEzc3EEdZr9Vf3RuQazKZ_X2Q&oe=6847B5E0",
+                    "https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/495074594_682788704386192_9035848786602986038_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4RB9wrjy4b4Q7kNvwHIsgK1&_nc_oc=AdmgD9boADSPk80h22_VwJVJbODrlytLc4Enaq03eLuonnHl-skn4RjgHS-YTWJ1-hcIM4WFeXGHcQ4WhCRI0P42&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD2QH4koaKaL5JNJdhhD4bkN5U09qYtCimbXT2ZL8d9cAj8g&oe=6847DF7A",
+                    "https://scontent.fmnl8-5.fna.fbcdn.net/v/t1.15752-9/488604257_2974803196026043_8499903081581162923_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=llmANmab5x0Q7kNvwHiRNiu&_nc_oc=Adm7-6NjCI93YksqgZ91oOY6qmnkefjIW6o-5LHpoh4SY5MTVRoK37tBuj1LXc_8kCs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&oh=03_Q7cD2QG3oST2eYwLtKu0Gis3Hv4dZaBrUAM3ZCI3O6bzBr8JGg&oe=6847EB54",
+                    "https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/490267216_1226202259107904_1677072771600441249_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=tQGm0rPW1N8Q7kNvwFxmJcd&_nc_oc=AdmoE0j-QSleuMGbNuNyCfA0u47wpH45pSogeDlKUS6PwSFw5kxqaELEwrnXfkhKkvE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&oh=03_Q7cD2QHTVcuowSakD-V0WrhZIBji6CRskOK9igNDEHQ34Q_4rw&oe=6847F417",
+                ];
 
-                const buttons = document.querySelectorAll("#quiz-options button");
-                buttons.forEach((btn, i) => {
-                    btn.textContent = q.options[i];
-                    btn.onclick = () => checkAnswer(i);
+
+
+                let currentImg = 0;
+                function showImage(index) {
+                    document.getElementById("gallery-img").src = images[index];
+                }
+                function nextImage() {
+                    currentImg = (currentImg + 1) % images.length;
+                    showImage(currentImg);
+                }
+                function prevImage() {
+                    currentImg = (currentImg - 1 + images.length) % images.length;
+                    showImage(currentImg);
+                }
+
+                // Secret Code Message
+                function checkCode() {
+                    const input = document.getElementById("code-input").value;
+                    if (input === "072324") {
+                        document.getElementById("secret-text").style.display = "block";
+                    } else {
+                        alert("Oops! Mali, Tanungin mo yung gumawa");
+                    }
+                }
+
+                // Quiz Game (Multi-question)
+                const quizData = [
+                    {
+                        question: "Ano ang unang regalo na inigay ko sayo?",
+                        options: ["Tulips lamp", "Portrait", "Rose"],
+                        correctIndex: 0
+                    },
+                    {
+                        question: "First conversation?",
+                        options: ["AUG 5", "JUNE 11", "JULY 23"],
+                        correctIndex: 2
+                    },
+                    {
+                        question: "Sino madalas magselos?",
+                        options: ["ako", "ikaw", "pareho"],
+                        correctIndex: 2
+                    }
+                ];
+
+                let currentQuestion = 0;
+
+                function loadQuestion() {
+                    const q = quizData[currentQuestion];
+                    document.getElementById("quiz-question").textContent = q.question;
+
+                    const buttons = document.querySelectorAll("#quiz-options button");
+                    buttons.forEach((btn, i) => {
+                        btn.textContent = q.options[i];
+                        btn.onclick = () => checkAnswer(i);
+                    });
+
+                    document.getElementById("quiz-feedback").textContent = "";
+                }
+
+                function checkAnswer(index) {
+                    const q = quizData[currentQuestion];
+                    const feedback = document.getElementById("quiz-feedback");
+
+                    if (index === q.correctIndex) {
+                        feedback.textContent = "YAN! ngayon alam mo na 💖";
+                        feedback.style.color = "#4CAF50";
+                    } else {
+                        feedback.textContent = "Ayy, di alam";
+                        feedback.style.color = "#F44336";
+                    }
+
+                    setTimeout(() => {
+                        currentQuestion = (currentQuestion + 1) % quizData.length;
+                        loadQuestion();
+                    }, 2000);
+                }
+
+                window.onload = loadQuestion;
+
+                const verses = [
+                    "Philippians 4:13 – I can do all things through Christ who strengthens me.",
+                    "Jeremiah 29:11 – 'For I know the plans I have for you,' declares the Lord...",
+                    "1 Corinthians 13:4 – Love is patient, love is kind. It does not envy...",
+                    "Psalm 23:1 – The Lord is my shepherd; I shall not want.",
+                    "Romans 8:28 – And we know that in all things God works for the good...",
+                    "Proverbs 3:5 – Trust in the Lord with all your heart...",
+                    "Song of Solomon 3:4 – I have found the one whom my soul loves.",
+                    "Isaiah 41:10 – Do not fear, for I am with you...",
+                    "Matthew 28:20 – I am with you always, even to the end of the age.",
+                    "Lamentations 3:22-23 – His mercies are new every morning.",
+                    "John 3:16 – For God so loved the world that He gave His one and only Son...",
+                    "Romans 5:8 – But God demonstrates His own love for us in this: While we were still sinners, Christ died for us.",
+                    "Proverbs 31:25 – She is clothed with strength and dignity, and she laughs without fear of the future.",
+                    "Psalm 46:1 – God is our refuge and strength, an ever-present help in trouble.",
+                    "Ephesians 2:8-9 – For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God...",
+                    "Isaiah 40:31 – But those who hope in the Lord will renew their strength...",
+                    "Hebrews 13:5 – Never will I leave you; never will I forsake you.",
+                    "Matthew 11:28 – Come to me, all you who are weary and burdened, and I will give you rest.",
+                    "1 Peter 5:7 – Cast all your anxiety on Him because He cares for you.",
+                    "Romans 15:13 – May the God of hope fill you with all joy and peace as you trust in Him...",
+                    "Joshua 1:9 – Have I not commanded you? Be strong and courageous. Do not be afraid...",
+                    "Psalm 34:8 – Taste and see that the Lord is good; blessed is the one who takes refuge in Him.",
+                    "2 Corinthians 5:7 – For we live by faith, not by sight.",
+                    "James 1:5 – If any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach...",
+                    "Romans 12:12 – Be joyful in hope, patient in affliction, faithful in prayer.",
+                    "2 Timothy 1:7 – For God gave us a spirit not of fear but of power and love and self-control.",
+                    "Colossians 3:23 – Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
+                    "Matthew 5:14 – You are the light of the world. A town built on a hill cannot be hidden.",
+                    "Psalm 121:1-2 – I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
+                    "Titus 3:5 – He saved us, not because of righteous things we had done, but because of His mercy.",
+                    "Luke 1:37 – For no word from God will ever fail.",
+                    "Deuteronomy 31:6 – Be strong and courageous. Do not be afraid or terrified because of them...",
+                    "Matthew 6:33 – But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
+                    "Romans 12:2 – Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
+                    "Philippians 1:6 – Being confident of this, that He who began a good work in you will carry it on to completion until the day of Christ Jesus.",
+                    "Psalm 119:105 – Your word is a lamp for my feet, a light on my path.",
+                    "1 John 4:18 – There is no fear in love. But perfect love drives out fear...",
+                ];
+
+
+                const typewriter = new Typewriter('#headerTitle', {
+                    loop: true,
+                    delay: 75,
                 });
 
-                document.getElementById("quiz-feedback").textContent = "";
-            }
+                typewriter
+                    .typeString("YOU EVERYTHING I WANTED")
+                    .pauseFor(1500)
+                    .deleteAll()
+                    .typeString("ALL MY MESSAGE FOR YOU")
+                    .pauseFor(1500)
+                    .deleteAll()
+                    .typeString("I'll wait for you")
+                    .pauseFor(2000)
+                    .start();
 
-            function checkAnswer(index) {
-                const q = quizData[currentQuestion];
-                const feedback = document.getElementById("quiz-feedback");
 
-                if (index === q.correctIndex) {
-                    feedback.textContent = "YAN! ngayon alam mo na 💖";
-                    feedback.style.color = "#4CAF50";
-                } else {
-                    feedback.textContent = "Ayy, di alam";
-                    feedback.style.color = "#F44336";
+                const today = new Date();
+                const index = today.getDate() % verses.length;
+                const verseBox = document.getElementById("bible-verse");
+                verseBox.textContent = verses[index];
+
+                function toggleLoveLetter3() {
+                    const letter = document.getElementById("loveLetter3");
+                    letter.style.display = (letter.style.display === "block") ? "none" : "block";
                 }
 
-                setTimeout(() => {
-                    currentQuestion = (currentQuestion + 1) % quizData.length;
-                    loadQuestion();
-                }, 2000);
-            }
+                function toggleLoveLetter4() {
+                    const letter = document.getElementById("loveLetter4");
+                    letter.style.display = (letter.style.display === "block") ? "none" : "block";
+                }
 
-            window.onload = loadQuestion;
-
-            const verses = [
-                "Philippians 4:13 – I can do all things through Christ who strengthens me.",
-                "Jeremiah 29:11 – 'For I know the plans I have for you,' declares the Lord...",
-                "1 Corinthians 13:4 – Love is patient, love is kind. It does not envy...",
-                "Psalm 23:1 – The Lord is my shepherd; I shall not want.",
-                "Romans 8:28 – And we know that in all things God works for the good...",
-                "Proverbs 3:5 – Trust in the Lord with all your heart...",
-                "Song of Solomon 3:4 – I have found the one whom my soul loves.",
-                "Isaiah 41:10 – Do not fear, for I am with you...",
-                "Matthew 28:20 – I am with you always, even to the end of the age.",
-                "Lamentations 3:22-23 – His mercies are new every morning.",
-                "John 3:16 – For God so loved the world that He gave His one and only Son...",
-                "Romans 5:8 – But God demonstrates His own love for us in this: While we were still sinners, Christ died for us.",
-                "Proverbs 31:25 – She is clothed with strength and dignity, and she laughs without fear of the future.",
-                "Psalm 46:1 – God is our refuge and strength, an ever-present help in trouble.",
-                "Ephesians 2:8-9 – For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God...",
-                "Isaiah 40:31 – But those who hope in the Lord will renew their strength...",
-                "Hebrews 13:5 – Never will I leave you; never will I forsake you.",
-                "Matthew 11:28 – Come to me, all you who are weary and burdened, and I will give you rest.",
-                "1 Peter 5:7 – Cast all your anxiety on Him because He cares for you.",
-                "Romans 15:13 – May the God of hope fill you with all joy and peace as you trust in Him...",
-                "Joshua 1:9 – Have I not commanded you? Be strong and courageous. Do not be afraid...",
-                "Psalm 34:8 – Taste and see that the Lord is good; blessed is the one who takes refuge in Him.",
-                "2 Corinthians 5:7 – For we live by faith, not by sight.",
-                "James 1:5 – If any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach...",
-                "Romans 12:12 – Be joyful in hope, patient in affliction, faithful in prayer.",
-                "2 Timothy 1:7 – For God gave us a spirit not of fear but of power and love and self-control.",
-                "Colossians 3:23 – Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.",
-                "Matthew 5:14 – You are the light of the world. A town built on a hill cannot be hidden.",
-                "Psalm 121:1-2 – I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth.",
-                "Titus 3:5 – He saved us, not because of righteous things we had done, but because of His mercy.",
-                "Luke 1:37 – For no word from God will ever fail.",
-                "Deuteronomy 31:6 – Be strong and courageous. Do not be afraid or terrified because of them...",
-                "Matthew 6:33 – But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
-                "Romans 12:2 – Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
-                "Philippians 1:6 – Being confident of this, that He who began a good work in you will carry it on to completion until the day of Christ Jesus.",
-                "Psalm 119:105 – Your word is a lamp for my feet, a light on my path.",
-                "1 John 4:18 – There is no fear in love. But perfect love drives out fear...",
-            ];
+                function toggleLoveLetter5() {
+                    const letter = document.getElementById("loveLetter5");
+                    letter.style.display = (letter.style.display === "block") ? "none" : "block";
+                }
 
 
-            const typewriter = new Typewriter('#headerTitle', {
-                loop: true,
-                delay: 75,
-            });
+                const sidebar = document.getElementById('sidebar');
+                const toggleBtn = document.getElementById('toggleBtn');
 
-            typewriter
-                .typeString("YOU EVERYTHING I WANTED")
-                .pauseFor(1500)
-                .deleteAll()
-                .typeString("ALL MY MESSAGE FOR YOU")
-                .pauseFor(1500)
-                .deleteAll()
-                .typeString("I'll wait for you")
-                .pauseFor(2000)
-                .start();
-
-
-            const today = new Date();
-            const index = today.getDate() % verses.length;
-            const verseBox = document.getElementById("bible-verse");
-            verseBox.textContent = verses[index];
-
-            function toggleLoveLetter3() {
-                const letter = document.getElementById("loveLetter3");
-                letter.style.display = (letter.style.display === "block") ? "none" : "block";
-            }
-
-            function toggleLoveLetter4() {
-                const letter = document.getElementById("loveLetter4");
-                letter.style.display = (letter.style.display === "block") ? "none" : "block";
-            }
-
-
-            const sidebar = document.getElementById('sidebar');
-            const toggleBtn = document.getElementById('toggleBtn');
-
-            toggleBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-                toggleBtn.innerHTML = sidebar.classList.contains('open') ? '&#x25C0;' : '&#x25B6;';
-                // Changes arrow direction (◀ or ▶)
-            });
-
-
-
-
-            function toggleSection(id) {
-                const sections = document.querySelectorAll('.toggle-section');
-                sections.forEach(section => {
-                    section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
+                toggleBtn.addEventListener('click', () => {
+                    sidebar.classList.toggle('open');
+                    toggleBtn.innerHTML = sidebar.classList.contains('open') ? '&#x25C0;' : '&#x25B6;';
+                    // Changes arrow direction (◀ or ▶)
                 });
-            }
 
 
 
-            // Countdown target date - set to July 23, 2025
-            const countdownDate = new Date("July 23, 2025 00:00:00").getTime();
 
-            const countdownFunc = setInterval(function () {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor(
-                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                );
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("countdownTimer").innerHTML =
-                    days +
-                    "d " +
-                    hours +
-                    "h " +
-                    minutes +
-                    "m " +
-                    seconds +
-                    "s ";
-
-                if (distance < 0) {
-                    clearInterval(countdownFunc);
-                    document.getElementById("countdown").innerHTML = "It's today!";
+                function toggleSection(id) {
+                    const sections = document.querySelectorAll('.toggle-section');
+                    sections.forEach(section => {
+                        section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
+                    });
                 }
-            }, 1000);
 
-            const hugBtn = document.getElementById('hugBtn');
-            const hugGifContainer = document.getElementById('hugGif');
-            const hugImg = hugGifContainer.querySelector('img');
 
-            hugBtn.addEventListener('click', () => {
-                // Reset GIF by changing src
-                const src = hugImg.src;
-                hugImg.src = ''; // clear first
-                hugImg.src = src; // reset to same source
 
-                // Show and then hide the GIF
-                hugGifContainer.classList.remove('hidden');
-                setTimeout(() => {
-                    hugGifContainer.classList.add('hidden');
-                }, 3000); // 5 seconds
-            });
+                // Countdown target date - set to July 23, 2025
+                const countdownDate = new Date("July 23, 2025 00:00:00").getTime();
 
-            const songs = [
-                { title: "IF", artist: "bread", src: "SONGS/If.mp3" },
-                { title: "BALISONG", artist: "Rico Blanco", src: "SONGS/Balisong.mp3" },
-                { title: "DALANGIN", artist: "Earl Agustin", src: "SONGS/Dalangin.mp3" },
-                { title: "PALAGI", artist: "TJ Monterde", src: "SONGS/Palagi.mp3" },
-                { title: "THE ONLY EXCEPTION", artist: "Paramore", src: "SONGS/The Only Exception.mp3" },
-                { title: "U-BELT", artist: "Jan Roberts", src: "SONGS/U-Belt.mp3" },
-                { title: "ISA LANG", artist: "Arthur Nery", src: "SONGS/Isa lang.mp3" },
-                { title: "YOU!", artist: "LANY", src: "SONGS/you!.mp3" },
-                { title: "SHE WILL BE LOVED", artist: "Maroon 5", src: "SONGS/She Will Be Loved.mp3" },
-                { title: "YOUR UNIVERSE", artist: "Rico Blanco", src: "SONGS/Your Universe2.mp3" },
-                { title: "YAKAP SA DILIM", artist: "Orange & Lemon", src: "SONGS/Yakap Sa Dilim.mp3" },
-                { title: "YOU'LL BE IN MY HEART", artist: "NIKI", src: "SONGS/You'll Be in My Heart.mp3" },
-                { title: "IRIS", artist: "Goo Goo Dolls", src: "SONGS/Iris.mp3" },
-                { title: "YOU'LL BE SAFE HERE", artist: "Rico Blanco", src: "SONGS/You’ll Be Safe Here.mp3" },
-                { title: "I WON'T GIVE UP", artist: "Jason Mraz", src: "SONGS/I Won't Give Up.mp3" },
-            ];
+                const countdownFunc = setInterval(function () {
+                    const now = new Date().getTime();
+                    const distance = countdownDate - now;
 
-            let currentSong = 0;
-            const audio = document.getElementById('audio');
-            const playBtn = document.getElementById('play-btn');
-            const title = document.getElementById('song-title');
-            const artist = document.getElementById('song-artist');
-            const ring = document.getElementById('glow-ring');
-            const volumeSlider = document.getElementById('volume');
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor(
+                        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                    );
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            function loadSong(index) {
-                const song = songs[index];
-                audio.src = song.src;
-                title.textContent = song.title;
-                artist.textContent = song.artist;
-                audio.play();
-                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                ring.classList.add("active");
-            }
+                    document.getElementById("countdownTimer").innerHTML =
+                        days +
+                        "d " +
+                        hours +
+                        "h " +
+                        minutes +
+                        "m " +
+                        seconds +
+                        "s ";
 
-            function togglePlay() {
-                if (audio.paused) {
+                    if (distance < 0) {
+                        clearInterval(countdownFunc);
+                        document.getElementById("countdown").innerHTML = "It's today!";
+                    }
+                }, 1000);
+
+                const hugBtn = document.getElementById('hugBtn');
+                const hugGifContainer = document.getElementById('hugGif');
+                const hugImg = hugGifContainer.querySelector('img');
+
+                hugBtn.addEventListener('click', () => {
+                    // Reset GIF by changing src
+                    const src = hugImg.src;
+                    hugImg.src = ''; // clear first
+                    hugImg.src = src; // reset to same source
+
+                    // Show and then hide the GIF
+                    hugGifContainer.classList.remove('hidden');
+                    setTimeout(() => {
+                        hugGifContainer.classList.add('hidden');
+                    }, 3000); // 5 seconds
+                });
+
+                const songs = [
+                    { title: "IF", artist: "bread", src: "SONGS/If.mp3" },
+                    { title: "BALISONG", artist: "Rico Blanco", src: "SONGS/Balisong.mp3" },
+                    { title: "DALANGIN", artist: "Earl Agustin", src: "SONGS/Dalangin.mp3" },
+                    { title: "PALAGI", artist: "TJ Monterde", src: "SONGS/Palagi.mp3" },
+                    { title: "THE ONLY EXCEPTION", artist: "Paramore", src: "SONGS/The Only Exception.mp3" },
+                    { title: "U-BELT", artist: "Jan Roberts", src: "SONGS/U-Belt.mp3" },
+                    { title: "ISA LANG", artist: "Arthur Nery", src: "SONGS/Isa lang.mp3" },
+                    { title: "YOU!", artist: "LANY", src: "SONGS/you!.mp3" },
+                    { title: "SHE WILL BE LOVED", artist: "Maroon 5", src: "SONGS/She Will Be Loved.mp3" },
+                    { title: "YOUR UNIVERSE", artist: "Rico Blanco", src: "SONGS/Your Universe2.mp3" },
+                    { title: "YAKAP SA DILIM", artist: "Orange & Lemon", src: "SONGS/Yakap Sa Dilim.mp3" },
+                    { title: "YOU'LL BE IN MY HEART", artist: "NIKI", src: "SONGS/You'll Be in My Heart.mp3" },
+                    { title: "IRIS", artist: "Goo Goo Dolls", src: "SONGS/Iris.mp3" },
+                    { title: "YOU'LL BE SAFE HERE", artist: "Rico Blanco", src: "SONGS/You’ll Be Safe Here.mp3" },
+                    { title: "I WON'T GIVE UP", artist: "Jason Mraz", src: "SONGS/I Won't Give Up.mp3" },
+                ];
+
+                let currentSong = 0;
+                const audio = document.getElementById('audio');
+                const playBtn = document.getElementById('play-btn');
+                const title = document.getElementById('song-title');
+                const artist = document.getElementById('song-artist');
+                const ring = document.getElementById('glow-ring');
+                const volumeSlider = document.getElementById('volume');
+
+                function loadSong(index) {
+                    const song = songs[index];
+                    audio.src = song.src;
+                    title.textContent = song.title;
+                    artist.textContent = song.artist;
                     audio.play();
                     playBtn.innerHTML = '<i class="fas fa-pause"></i>';
                     ring.classList.add("active");
-                } else {
-                    audio.pause();
-                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                    ring.classList.remove("active");
                 }
-            }
 
-            function nextSong() {
-                currentSong = (currentSong + 1) % songs.length;
-                loadSong(currentSong);
-            }
+                function togglePlay() {
+                    if (audio.paused) {
+                        audio.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        ring.classList.add("active");
+                    } else {
+                        audio.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        ring.classList.remove("active");
+                    }
+                }
 
-            function prevSong() {
-                currentSong = (currentSong - 1 + songs.length) % songs.length;
-                loadSong(currentSong);
-            }
+                function nextSong() {
+                    currentSong = (currentSong + 1) % songs.length;
+                    loadSong(currentSong);
+                }
 
-            volumeSlider.addEventListener("input", function () {
+                function prevSong() {
+                    currentSong = (currentSong - 1 + songs.length) % songs.length;
+                    loadSong(currentSong);
+                }
+
+                volumeSlider.addEventListener("input", function () {
+                    audio.volume = volumeSlider.value;
+                    updateVolumeBar();
+                });
+
+                function updateVolumeBar() {
+                    const value = volumeSlider.value * 100;
+                    volumeSlider.style.background = `linear-gradient(90deg, #bb86fc ${value}%, #555 ${value}%)`;
+                }
+
+                audio.addEventListener('ended', nextSong);
+
+                function toggleWidget() {
+                    const widget = document.getElementById("musicWidget");
+                    widget.classList.toggle("collapsed");
+                }
+
+                // Initialize
                 audio.volume = volumeSlider.value;
                 updateVolumeBar();
-            });
 
-            function updateVolumeBar() {
-                const value = volumeSlider.value * 100;
-                volumeSlider.style.background = `linear-gradient(90deg, #bb86fc ${value}%, #555 ${value}%)`;
-            }
+                const selectElement = document.getElementById('song-select');
 
-            audio.addEventListener('ended', nextSong);
+                songs.forEach((song, index) => {
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = `${song.title} - ${song.artist}`;
+                    selectElement.appendChild(option);
+                });
 
-            function toggleWidget() {
-                const widget = document.getElementById("musicWidget");
-                widget.classList.toggle("collapsed");
-            }
-
-            // Initialize
-            audio.volume = volumeSlider.value;
-            updateVolumeBar();
-
-            const selectElement = document.getElementById('song-select');
-
-            songs.forEach((song, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = `${song.title} - ${song.artist}`;
-                selectElement.appendChild(option);
-            });
-
-            function selectSong() {
-                const selectedIndex = selectElement.value;
-                currentSongIndex = parseInt(selectedIndex);
-                loadSong(currentSongIndex);
-                playSong();
-            }
+                function selectSong() {
+                    const selectedIndex = selectElement.value;
+                    currentSongIndex = parseInt(selectedIndex);
+                    loadSong(currentSongIndex);
+                    playSong();
+                }
 
 
 
-        </script>
+            </script>
 </body>
 
 </html>
