@@ -769,8 +769,12 @@
                 </p>
             </div>
         </div>
-       div id="countdownTimer"></div>
-<div id="popupMessage" style="display:none; font-weight: bold; color: purple;">🎉 Countdown Complete! Next countdown starts now.</div>
+       <<div class="countdown">
+    <h3>A Reminder</h3>
+    <p id="countdownTimer"></p>
+    <p id="popupMessage" style="display: none; color: crimson; font-weight: bold;">🎉 Hi Leen! A new countdown begins!</p>
+</div>
+
         <div class="hug-container">
             <button id="hugBtn"> Hug 🤗</button>
             <div id="hugGif" class="hug-gif hidden">
@@ -1350,50 +1354,48 @@
 
 
 
-            // Function to calculate future date (+3 days)
-    function getNextCountdownDate(baseDate) {
-        const nextDate = new Date(baseDate);
-        nextDate.setDate(nextDate.getDate() + 3);
-        return nextDate.getTime();
+            function getNextCountdownDate(baseTime) {
+        const next = new Date(baseTime);
+        next.setDate(next.getDate() + 3);
+        return next.getTime();
     }
 
-    // Initial countdown target date
-    let countdownDate = new Date("July 25, 2026 00:00:00").getTime();
+    let countdownDate = new Date("July 23, 2025 00:00:00").getTime();
 
     function startCountdown() {
-        const timer = setInterval(function () {
+        const countdownFunc = setInterval(function () {
             const now = new Date().getTime();
             const distance = countdownDate - now;
 
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdownTimer").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
             if (distance <= 0) {
-                clearInterval(timer);
+                clearInterval(countdownFunc);
 
-                // Show popup message
-                document.getElementById("popupMessage").style.display = "block";
+                // Show the message
+                const popup = document.getElementById("popupMessage");
+                popup.style.display = "block";
 
-                // Set new countdown date (+3 days from original)
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    popup.style.display = "none";
+                }, 5000);
+
+                // Set next countdown to 3 days later
                 countdownDate = getNextCountdownDate(new Date());
 
-                // Hide the message after a few seconds
-                setTimeout(() => {
-                    document.getElementById("popupMessage").style.display = "none";
-                }, 5000); // 5 seconds
-
-                // Restart the countdown
+                // Restart countdown
                 startCountdown();
-            } else {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("countdownTimer").innerHTML =
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
         }, 1000);
     }
 
-    // Start the first countdown
     startCountdown();
 
             const hugBtn = document.getElementById('hugBtn');
