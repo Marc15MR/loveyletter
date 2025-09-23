@@ -11,6 +11,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
     <style>
+
+    <script src="dome-gallery.js"></script>
         /* General Styles */
         body {
             font-family: 'Caveat', cursive;
@@ -743,6 +745,83 @@
         .song-select:hover {
             background: #945cb4;
         }
+
+       .sphere-root {
+  --radius: 500px;
+  --tile-radius: 30px;
+  --enlarge-radius: 30px;
+  --image-filter: grayscale(1);
+
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.sphere-main {
+  width: 100%;
+  height: 100%;
+  perspective: 2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sphere {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.item {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.item__image {
+  width: 100px;
+  height: 120px;
+  border-radius: var(--tile-radius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--image-filter);
+  pointer-events: none;
+}
+
+.viewer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+
+.scrim {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.scrim.active {
+  opacity: 1;
+  visibility: visible;
+}
+
     </style>
 </head>
 
@@ -1144,6 +1223,17 @@ onclick="toggleLoveLetter7()">I hope you understand(1)</button>
                 <p id="formFeedback" style="color: green; display: none;"></p>
         </div>
 
+<div id="dome-gallery" class="sphere-root">
+    <main class="sphere-main">
+      <div class="stage">
+        <div class="sphere" id="sphere"></div>
+      </div>
+      <div class="overlay"></div>
+      <div class="overlay overlay--blur"></div>
+      <div class="viewer" id="viewer"></div>
+      <div class="scrim" id="scrim"></div>
+    </main>
+  </div>
 
         <!-- JavaScript -->
         <script>
@@ -1536,6 +1626,94 @@ onclick="toggleLoveLetter7()">I hope you understand(1)</button>
             }
 
 
+const images = [
+  "https://images.unsplash.com/photo-1755331039789-7e5680e26e8f?q=80&w=774",
+  "https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772",
+  "https://images.unsplash.com/photo-1755497595318-7e5e3523854f?q=80&w=774",
+  "https://images.unsplash.com/photo-1755353985163-c2a0fe5ac3d8?q=80&w=774",
+  "https://images.unsplash.com/photo-1745965976680-d00be7dc0377?q=80&w=774",
+  "https://images.unsplash.com/photo-1752588975228-21f44630bb3c?q=80&w=774",
+  "https://pbs.twimg.com/media/Gyla7NnXMAAXSo_?format=jpg&name=large"
+];
+
+const sphere = document.getElementById("sphere");
+const scrim = document.getElementById("scrim");
+const viewer = document.getElementById("viewer");
+
+let rotX = 0, rotY = 0;
+let dragging = false, startX, startY;
+
+function buildSphere() {
+  const segments = 12; // fewer for simplicity
+  const radius = 400;
+  images.forEach((src, i) => {
+    const angle = (i / images.length) * Math.PI * 2;
+    const y = Math.sin(angle) * radius;
+    const x = Math.cos(angle) * radius;
+
+    const item = document.createElement("div");
+    item.className = "item";
+    item.style.transform = `translate3d(${x}px, ${y/2}px, ${y}px)`;
+
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "item__image";
+    const img = document.createElement("img");
+    img.src = src;
+    imgDiv.appendChild(img);
+
+    imgDiv.addEventListener("click", () => openImage(src));
+
+    item.appendChild(imgDiv);
+    sphere.appendChild(item);
+  });
+}
+
+function updateRotation() {
+  sphere.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+}
+
+document.addEventListener("mousedown", e => {
+  dragging = true;
+  startX = e.clientX;
+  startY = e.clientY;
+});
+document.addEventListener("mouseup", () => dragging = false);
+document.addEventListener("mousemove", e => {
+  if (!dragging) return;
+  rotY += (e.clientX - startX) * 0.1;
+  rotX -= (e.clientY - startY) * 0.1;
+  updateRotation();
+  startX = e.clientX;
+  startY = e.clientY;
+});
+
+function openImage(src) {
+  scrim.classList.add("active");
+  const overlay = document.createElement("div");
+  overlay.className = "enlarge";
+  overlay.style.cssText = `
+    position:fixed;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:250px;height:350px;
+    z-index:20;border-radius:var(--enlarge-radius);
+    overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4);
+  `;
+  const img = document.createElement("img");
+  img.src = src;
+  img.style.width = "100%";
+  img.style.height = "100%";
+  img.style.objectFit = "cover";
+  overlay.appendChild(img);
+  viewer.innerHTML = "";
+  viewer.appendChild(overlay);
+}
+
+scrim.addEventListener("click", () => {
+  scrim.classList.remove("active");
+  viewer.innerHTML = "";
+});
+
+buildSphere();
 
         </script>
 </body>
