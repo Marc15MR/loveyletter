@@ -1148,14 +1148,17 @@ onclick="toggleLoveLetter7()">I hope you understand(1)</button>
         <p id="bible-verse">Loading...</p>
     </div>
 
-    <!-- Gallery Section -->
-    <section id="gallery" style="text-align: center; padding: 50px; background-color: #fff;">
-        <h2 style="color: #945cb4; font-size: 2rem; margin-bottom: 30px;">Our Moments 💓💕</h2>
-        <div style="position: relative; max-width: 600px; margin: 0 auto;">
-            <img id="gallery-img"
-                src="our pictures/album.jpg"
-                style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);" />
-
+    <div id="dome-gallery" class="sphere-root">
+    <main class="sphere-main">
+      <div class="stage">
+        <div class="sphere" id="sphere"></div>
+      </div>
+      <div class="overlay"></div>
+      <div class="overlay overlay--blur"></div>
+      <div class="viewer" id="viewer"></div>
+      <div class="scrim" id="scrim"></div>
+    </main>
+  </div>
             <!-- Navigation buttons -->
             <button onclick="prevImage()"
                 style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: #be29ec; color: white; border: none; border-radius: 50%; padding: 10px 14px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
@@ -1223,17 +1226,7 @@ onclick="toggleLoveLetter7()">I hope you understand(1)</button>
                 <p id="formFeedback" style="color: green; display: none;"></p>
         </div>
 
-<div id="dome-gallery" class="sphere-root">
-    <main class="sphere-main">
-      <div class="stage">
-        <div class="sphere" id="sphere"></div>
-      </div>
-      <div class="overlay"></div>
-      <div class="overlay overlay--blur"></div>
-      <div class="viewer" id="viewer"></div>
-      <div class="scrim" id="scrim"></div>
-    </main>
-  </div>
+
 
         <!-- JavaScript -->
         <script>
