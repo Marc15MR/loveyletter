@@ -744,6 +744,71 @@
             background: #945cb4;
         }
 
+.lovey-countdown {
+  background: linear-gradient(135deg, #ff9eb5, #ffbfd3);
+  padding: 20px;            /* more inner spacing */
+  margin: 15px;             /* space around so it doesn't stick to sidebar edges */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(255,120,150,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.lovey-countdown:before {
+  content: "❤";
+  font-size: 60px;
+  color: rgba(255,255,255,0.4);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  animation: floatHeart 3s infinite ease-in-out;
+}
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.lovey-countdown h3 {
+  font-family: 'Comic Sans MS', cursive;
+  color: white;
+  margin-bottom: 12px;     /* More gap below title */
+}
+
+.countdown-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;                /* Wider gap between time blocks */
+}
+
+.countdown-box div {
+  background: white;
+  padding: 12px;
+  flex: 1;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(255,100,130,0.3);
+}
+
+.countdown-box span {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #e60050;
+}
+
+.countdown-box small {
+  font-size: 12px;
+  color: #555;
+}
+
+.love-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: white;
+  font-style: italic;
+}
+
     </style>
 </head>
 
@@ -753,7 +818,17 @@
         <div id="toggleBtn">&#x25B6;</div>
 
         
-       <
+       <div class="lovey-countdown">
+  <h3>⏳ Countdown to Your Special Day 💖</h3>
+  <div class="countdown-box">
+    <div><span id="days">00</span><small>Days</small></div>
+    <div><span id="hours">00</span><small>Hours</small></div>
+    <div><span id="minutes">00</span><small>Mins</small></div>
+    <div><span id="seconds">00</span><small>Secs</small></div>
+  </div>
+  <p class="love-note">Counting every second until I’m with you again ❤️</p>
+</div>
+
 
         <div class="hug-container">
             <button id="hugBtn"> Hug 🤗</button>
@@ -1386,7 +1461,23 @@
 
 
 
-            
+            // Set your special date here (YYYY-MM-DD format)
+const targetDate = new Date("2025-11-05T00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  if (diff <= 0) return;
+
+  document.getElementById("days").textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+  document.getElementById("hours").textContent = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+}, 1000);
+
+
+
 
             const hugBtn = document.getElementById('hugBtn');
             const hugGifContainer = document.getElementById('hugGif');
